@@ -1,0 +1,222 @@
+/*.root {
+    visibility: hidden;
+}*/
+
+/*
+#iView11:hover {
+    width: 80px;
+    hight: 80px;
+    background: #333;
+    color: #111;
+    -fx-background-color: #333;
+    border-radius: 50%;
+    border: 5,5px solid #fff;
+    -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+}
+*/
+
+
+#iView12 {
+    visibility: hidden;
+}
+
+
+/*
+#glowing {
+    border-radius: 50;
+    background: #ffee10;
+    transition: .5s;
+    z-index: -1;
+}
+*/
+
+
+/*
+#glowing:hover testtest {
+    -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+}
+*/
+
+/*
+#testtest:hover {
+     -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+}
+*/
+
+/*
+#testtest2:hover {
+      -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+ }
+ */
+/*
+ #testtest2:hover {
+      -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+ }
+ */
+
+
+
+
+
+
+
+/*
+#testtest2:hover #iView12 {
+    visibility: visible;
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
+
+#testtest2:hover #iView11 {
+   visibility: hidden;
+}
+*/
+
+
+
+.buttonPane:hover #iView12 {
+    visibility: visible;
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
+
+.buttonPane:hover #iView11 {
+   visibility: hidden;
+}
+
+/*
+.buttonPane:hover #glowing {
+    -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+}
+*/
+
+.buttonPane:hover #testtest {
+     -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
+
+
+
+
+/*
+#testtest2:hover{
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
+*/
+/*
+#paneTop1:hover #iView11{
+    visibility: hidden;
+}
+
+
+
+
+
+    #paneTop1:hover #iView12{
+        visibility: visible;
+        -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+
+    }
+*/
+
+/*
+#glowing:hover {
+     -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+}
+*/
+/*
+#testtest {
+     -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+}
+*/
+
+/*
+#testtest2 {
+     -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+}
+*/
+
+/*
+#glowing {
+    -fx-effect: dropshadow( one-pass-box , red , 20, 0.0, 0, 0);
+}
+*/
+
+
+
+
+
+/*
+#iView12:hover {
+    width: 80px;
+    hight: 80px;
+    background: #333;
+    color: #111;
+    -fx-background-color: #333;
+    border-radius: 50%;
+    border: 5,5px solid #fff;
+    -fx-effect: innershadow( one-pass-box, red, 1, 1, 0, 0);
+}
+*/
+
+
+
+/*
+#paneTop1:hover #iView11{
+    visibility: hidden;
+}
+*/
+
+
+/*
+#paneTop1:hover:before #glowing{
+    visibility: visible;
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+
+}
+*/
+
+/*
+    #paneTop1:hover #iView12{
+        visibility: visible;
+        -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+
+    }
+*/
+
+/*
+#paneTop1 #iView12:hover{
+    visibility: visible;
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+
+}
+*/
+
+/*
+#testtest:hover #iView12{
+    visibility: visible;
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
+*/
+
+/*
+#testtest:hover #iView11{
+    visibility: hidden;
+}
+*/
+
+
+
+
+/*
+// DOes not work, dont target
+#iView12:hover{
+    visibility: visible;
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+
+}
+*/
+/*
+#iView12:hover #iView11{
+    visibility: hidden;
+}
+
+
+*/
