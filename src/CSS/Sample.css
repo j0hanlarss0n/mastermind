@@ -93,6 +93,10 @@
      -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
 }
 
+.glowingText {
+     -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
+
 
 
 

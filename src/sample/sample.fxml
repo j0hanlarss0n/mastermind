@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -94,8 +96,13 @@
                </children>
             </AnchorPane>
          </children></AnchorPane>
-      <AnchorPane fx:id="paneSettings" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
-         </AnchorPane>
+      <AnchorPane fx:id="paneSettings" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;">
+         <children>
+            <Slider fx:id="sliderOpacity" layoutX="250.0" layoutY="625.0" prefHeight="14.0" prefWidth="163.0" />
+            <Label layoutX="105.0" layoutY="624.0" prefHeight="17.0" prefWidth="70.0" styleClass="glowingText" text="Opacity" textFill="#ffee10" />
+            <ChoiceBox fx:id="choiceBoxDifficulty" layoutX="250.0" layoutY="579.0" prefHeight="25.0" prefWidth="163.0" />
+            <Label layoutX="105.0" layoutY="583.0" prefHeight="17.0" prefWidth="70.0" styleClass="glowingText" text="Difficulty" textFill="#ffee10" />
+         </children></AnchorPane>
       <AnchorPane fx:id="paneDown" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          </AnchorPane>
       <AnchorPane fx:id="paneUp" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">

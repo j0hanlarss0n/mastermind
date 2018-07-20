@@ -1,11 +1,14 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -16,6 +19,9 @@ public class Main extends Application {
     //offsets defined
     private double xOffset = 0;
     private double yOffset = 0;
+
+    @FXML
+    private Slider sliderOpacity;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

@@ -1,11 +1,15 @@
 package sample;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -24,6 +28,12 @@ public class Controller implements Initializable {
 
     @FXML
     private AnchorPane paneTop, paneUp, paneDown, paneSettings, paneStage;
+
+    @FXML
+    private ChoiceBox<String> choiceBoxDifficulty;
+
+    @FXML
+    private Slider sliderOpacity;
 
     @FXML
     private void handleButtonAction(javafx.scene.input.MouseEvent event) {
@@ -52,6 +62,10 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("Loading user data...");
+        System.out.println("Starting Controller...");
+        ObservableList<String> availableChoices = FXCollections.observableArrayList("4 balls", "6 balls");
+        choiceBoxDifficulty.setItems(availableChoices);
+        choiceBoxDifficulty.getSelectionModel().select("4 balls");
+
     }
 }
