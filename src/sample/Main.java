@@ -1,10 +1,12 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -38,6 +40,22 @@ public class Main extends Application {
                 primaryStage.setY(event.getScreenY() - yOffset);
             }
         });
+        root.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println("mouse click detected! " + event.getSource().getClass());
+                event.getSource();
+            }
+        });
+
+        root.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println("mouse click detected! " + mouseEvent.getSource().getClass().getName());
+            }
+        });
+
+
 
         Scene scene = new Scene (root);
         scene.setFill(Color.TRANSPARENT);
@@ -46,10 +64,8 @@ public class Main extends Application {
         primaryStage.setOpacity(0.85);
         primaryStage.setAlwaysOnTop(true);
         primaryStage.show();
-    }
 
 
-    public static void main(String[] args) {
-        launch(args);
     }
+
 }

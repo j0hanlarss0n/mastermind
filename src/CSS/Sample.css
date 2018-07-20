@@ -16,7 +16,7 @@
 */
 
 
-#iView12 {
+.iconGlow {
     visibility: hidden;
 }
 
@@ -73,13 +73,14 @@
 
 
 
-.buttonPane:hover #iView12 {
+.buttonPane:hover .iconGlow {
     visibility: visible;
+    fill: green;
     -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
 }
 
-.buttonPane:hover #iView11 {
-   visibility: hidden;
+.buttonPane:hover .icon {
+    visibility: hidden;
 }
 
 /*
@@ -88,7 +89,7 @@
 }
 */
 
-.buttonPane:hover #testtest {
+.buttonPane:hover .circleGlow {
      -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
 }
 
