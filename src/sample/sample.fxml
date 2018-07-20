@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane fx:id="paneStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="500.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="paneStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="500.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <AnchorPane id="topMenu" fx:id="paneTop" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #3D4956;">
          <children>
@@ -19,7 +19,7 @@
                      <children>
                         <Circle id="glowing" centerX="25.0" centerY="25.0" fill="#21722000" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circle" />
                         <Circle centerX="25.0" centerY="25.0" fill="#3f4c61" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circleGlow" />
-                        <ImageView fx:id="btnUp" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
+                        <ImageView fx:id="btnUp" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
                            <image>
                               <Image url="@../images/upGlow.png" />
                            </image>
@@ -39,7 +39,7 @@
                      <children>
                         <Circle centerX="25.0" centerY="25.0" fill="#21722000" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circle" />
                         <Circle centerX="25.0" centerY="25.0" fill="#3f4c61" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circleGlow" />
-                        <ImageView fx:id="btnDown" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
+                        <ImageView fx:id="btnDown" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
                            <image>
                               <Image url="@../images/downGlow.png" />
                            </image>
@@ -59,7 +59,7 @@
                      <children>
                         <Circle centerX="25.0" centerY="25.0" fill="#21722000" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circle" />
                         <Circle centerX="25.0" centerY="25.0" fill="#3f4c61" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circleGlow" />
-                        <ImageView fx:id="btnSettings" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-4.0" y="-4.0">
+                        <ImageView fx:id="btnSettings" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-4.0" y="-4.0">
                            <image>
                               <Image url="@../images/settingsGlow.png" />
                            </image>
@@ -79,7 +79,7 @@
                      <children>
                         <Circle id="glowing" centerX="25.0" centerY="25.0" fill="#21722000" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circle" />
                         <Circle centerX="25.0" centerY="25.0" fill="#3f4c61" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circleGlow" />
-                        <ImageView fx:id="btnPower" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
+                        <ImageView fx:id="btnPower" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
                            <image>
                               <Image url="@../images/powerGlow.png" />
                            </image>
@@ -94,13 +94,13 @@
                </children>
             </AnchorPane>
          </children></AnchorPane>
-      <AnchorPane fx:id="paneSettings" layoutY="120.0" opacity="0.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
+      <AnchorPane fx:id="paneSettings" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          </AnchorPane>
-      <AnchorPane fx:id="paneDown" layoutY="120.0" opacity="0.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
+      <AnchorPane fx:id="paneDown" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          </AnchorPane>
-      <AnchorPane fx:id="paneUp" layoutY="120.0" opacity="0.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
+      <AnchorPane fx:id="paneUp" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          <children>
-            <Label layoutX="261.0" layoutY="357.0" text="Attacking" />
+            <Label fx:id="paneUpLabel" layoutX="261.0" layoutY="357.0" text="paneUpLabel" />
             <ImageView fx:id="btnAttack1" fitHeight="60.0" fitWidth="60.0" layoutX="54.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/up.png" />
