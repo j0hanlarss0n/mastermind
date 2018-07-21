@@ -2,12 +2,15 @@ package sample;
 
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -23,9 +26,16 @@ public class Main extends Application {
     @FXML
     private Slider sliderOpacity;
 
+    @FXML
+    private Label paneUpLabel;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        Parent root = loader.load();
+        Controller controller = loader.getController();
+
+        System.out.println(controller.getPaneUpLabel().getText());
         primaryStage.setTitle("Hello World");
         primaryStage.initStyle(StageStyle.TRANSPARENT);
 
@@ -61,6 +71,28 @@ public class Main extends Application {
             }
         });
 
+        //root.addEventFilter();
+
+
+        /*
+        root.addEventFilter( {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println("mouse click detected! " + mouseEvent.getSource().getClass().getName());
+            }
+        });
+
+
+        sliderOpacity.valueProperty().addListener(new ChangeListener() {
+
+            @Override
+            public void changed(ObservableValue arg0, Object arg1, Object arg2) {
+                paneUpLabel.textProperty().setValue( String.valueOf((int) sliderOpacity.getValue()));
+
+            }
+        });
+        */
+
 
 
         Scene scene = new Scene (root);
@@ -70,6 +102,7 @@ public class Main extends Application {
         primaryStage.setOpacity(0.85);
         primaryStage.setAlwaysOnTop(true);
         primaryStage.show();
+        controller.setStage(primaryStage);
 
 
     }

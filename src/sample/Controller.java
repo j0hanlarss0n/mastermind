@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.stage.Stage;
+
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +21,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
+    private Stage myStage;
 
     @FXML
     private Label paneUpLabel;
@@ -60,12 +63,30 @@ public class Controller implements Initializable {
         }
     }
 
+    public Label getPaneUpLabel() {
+        return paneUpLabel;
+    }
+
+    public void setStage(Stage stage) {
+        myStage = stage;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("Starting Controller...");
+
         ObservableList<String> availableChoices = FXCollections.observableArrayList("4 balls", "6 balls");
         choiceBoxDifficulty.setItems(availableChoices);
         choiceBoxDifficulty.getSelectionModel().select("4 balls");
+
+        sliderOpacity.valueProperty().addListener((observable, oldValue, newValue) -> {
+
+            myStage.setOpacity(newValue.doubleValue());
+            paneUpLabel.setText(Double.toString(newValue.doubleValue()));
+
+        });
+
+
 
     }
 }
