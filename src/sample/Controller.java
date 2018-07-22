@@ -53,7 +53,9 @@ public class Controller implements Initializable {
             ColoredSphere ball = new ColoredSphere();
 
             PegSquare pegs = new PegSquare();
-            h.getChildren().addAll(ball.getSkin(), pegs.getSkin());
+
+            Row row = new Row();
+            h.getChildren().addAll(ball.getSkin(), pegs.getSkin(), row.getSkin());
             paneDown.getChildren().addAll(h);
             paneDown.setVisible(false);
             paneSettings.setVisible(false);
