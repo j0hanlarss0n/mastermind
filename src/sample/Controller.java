@@ -49,8 +49,11 @@ public class Controller implements Initializable {
             System.out.println("mouse click detected! " + event.getSource().getClass());
             paneUp.setVisible(true);
             HBox h = new HBox(2);
+
             ColoredSphere ball = new ColoredSphere();
-            h.getChildren().addAll(ball.getSkin());
+
+            PegSquare pegs = new PegSquare();
+            h.getChildren().addAll(ball.getSkin(), pegs.getSkin());
             paneDown.getChildren().addAll(h);
             paneDown.setVisible(false);
             paneSettings.setVisible(false);

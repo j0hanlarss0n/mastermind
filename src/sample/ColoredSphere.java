@@ -22,7 +22,7 @@ public class ColoredSphere {
     }
 
     public void pressed(String color) {
-
+        System.out.println("Color in pressed: " + color);
     }
 
     public Node getSkin() {
