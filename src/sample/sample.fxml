@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
@@ -8,7 +7,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.shape.Circle?>
 
 <AnchorPane fx:id="paneStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="500.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
@@ -98,23 +96,17 @@
          </children></AnchorPane>
       <AnchorPane fx:id="paneSettings" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;">
          <children>
-            <Slider fx:id="sliderOpacity" layoutX="250.0" layoutY="625.0" prefHeight="14.0" prefWidth="163.0" blockIncrement="0.1" majorTickUnit="0.5" max="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
+            <Slider fx:id="sliderOpacity" blockIncrement="0.1" layoutX="250.0" layoutY="625.0" majorTickUnit="0.5" max="1.0" minorTickCount="1" prefHeight="14.0" prefWidth="163.0" showTickLabels="true" showTickMarks="true" />
             <Label layoutX="105.0" layoutY="624.0" prefHeight="17.0" prefWidth="70.0" styleClass="glowingText" text="Opacity" textFill="#ffee10" />
             <ChoiceBox fx:id="choiceBoxDifficulty" layoutX="250.0" layoutY="579.0" prefHeight="25.0" prefWidth="163.0" />
             <Label layoutX="105.0" layoutY="583.0" prefHeight="17.0" prefWidth="70.0" styleClass="glowingText" text="Difficulty" textFill="#ffee10" />
+            <Label fx:id="paneSettingsLabel" layoutX="105.0" layoutY="342.0" text="Label" />
          </children></AnchorPane>
       <AnchorPane fx:id="paneDown" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          </AnchorPane>
       <AnchorPane fx:id="paneUp" layoutY="120.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          <children>
-            <Label fx:id="paneUpLabel" layoutX="261.0" layoutY="357.0" text="paneUpLabel" />
-            <ImageView fx:id="btnAttack1" fitHeight="60.0" fitWidth="60.0" layoutX="54.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/up.png" />
-               </image>
-            </ImageView>
-            <Canvas height="200.0" layoutX="39.0" layoutY="118.0" width="200.0" />
-            <Region layoutX="114.0" layoutY="166.0" prefHeight="200.0" prefWidth="200.0" />
+            <Label fx:id="paneUpLabel" layoutX="14.0" layoutY="6.0" text="paneUpLabel" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

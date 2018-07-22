@@ -1,5 +1,8 @@
 package sample;
 
+import javafx.event.EventHandler;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import javafx.application.Platform;
@@ -15,7 +18,8 @@ import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-import java.awt.event.MouseEvent;
+import javafx.scene.input.MouseEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,7 +28,7 @@ public class Controller implements Initializable {
     private Stage myStage;
 
     @FXML
-    private Label paneUpLabel;
+    private Label paneSettingsLabel;
 
     @FXML
     private ImageView btnUp, btnDown, btnSettings, btnPower;
@@ -38,21 +42,30 @@ public class Controller implements Initializable {
     @FXML
     private Slider sliderOpacity;
 
+
     @FXML
-    private void handleButtonAction(javafx.scene.input.MouseEvent event) {
+    private void handleButtonAction(MouseEvent event) {
         if ( event.getTarget() == btnUp) {
+            System.out.println("mouse click detected! " + event.getSource().getClass());
             paneUp.setVisible(true);
+            HBox h = new HBox(2);
+            ColoredSphere ball = new ColoredSphere();
+            h.getChildren().addAll(ball.getSkin());
+            paneDown.getChildren().addAll(h);
             paneDown.setVisible(false);
             paneSettings.setVisible(false);
         } else if ( event.getTarget() == btnDown) {
+            System.out.println("mouse click detected! " + event.getSource().getClass());
             paneUp.setVisible(false);
             paneDown.setVisible(true);
             paneSettings.setVisible(false);
         } else if ( event.getTarget() == btnSettings) {
+            System.out.println("mouse click detected! " + event.getSource().getClass());
             paneUp.setVisible(false);
             paneDown.setVisible(false);
             paneSettings.setVisible(true);
         } else if ( event.getTarget() == btnPower) {
+            System.out.println("mouse click detected! " + event.getSource().getClass());
             if (!(paneUp.isVisible() || paneDown.isVisible() || paneSettings.isVisible())) {
                 Platform.exit();
             } else {
@@ -61,10 +74,11 @@ public class Controller implements Initializable {
                 paneSettings.setVisible(false);
             }
         }
+
     }
 
     public Label getPaneUpLabel() {
-        return paneUpLabel;
+        return paneSettingsLabel;
     }
 
     public void setStage(Stage stage) {
@@ -82,10 +96,15 @@ public class Controller implements Initializable {
         sliderOpacity.valueProperty().addListener((observable, oldValue, newValue) -> {
 
             myStage.setOpacity(newValue.doubleValue());
-            paneUpLabel.setText(Double.toString(newValue.doubleValue()));
+            paneSettingsLabel.setText(Double.toString(newValue.doubleValue()));
 
         });
 
+        sliderOpacity.addEventFilter(MouseEvent.ANY, (MouseEvent event) -> {
+            if (!(event.getEventType().getName() == "MOUSE_MOVED" || event.getEventType().getName() == "MOUSE_DRAGGED")) {
+                System.out.println(event.getEventType().getName());
+            }
+        });
 
 
     }
