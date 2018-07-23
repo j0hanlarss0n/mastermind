@@ -5,11 +5,12 @@ import javafx.scene.paint.Color;
 
 public class SelectorSphere {
     private Color color;
-
+    private Game game;
     private final SelectorSphereSkin skin;
 
-    public SelectorSphere(Color color) {
+    public SelectorSphere(Game game, Color color) {
         this.color = color;
+        this.game = game;
         skin = new SelectorSphereSkin(this, color);
     }
 

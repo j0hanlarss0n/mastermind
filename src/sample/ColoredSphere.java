@@ -23,12 +23,14 @@ public class ColoredSphere {
 
     private Color color;
 
+    private Game game;
     private ColorState colorState;
 
     private final ColoredSphereSkin skin;
 
-    public ColoredSphere() {
+    public ColoredSphere(Game game) {
         skin = new ColoredSphereSkin(this);
+        this.game = game;
     }
 
     public void pressed(String color) {

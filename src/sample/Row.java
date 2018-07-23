@@ -8,12 +8,13 @@ public class Row {
     private final RowSkin skin;
     private final ColoredSphere[] spheres = new ColoredSphere[4];
     private final ColoredSpherePlaceholder emptySphere = new ColoredSpherePlaceholder();
-    private final PegSquare pegs = new PegSquare();
+    private final PegSquare pegs;
 
-    public Row() {
+    public Row(Game game) {
         for(int i = 0; i < 4; i++) {
-            spheres[i] = new ColoredSphere();
+            spheres[i] = new ColoredSphere(game);
         }
+        pegs = new PegSquare(game);
         skin = new RowSkin(this);
     }
 

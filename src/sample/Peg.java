@@ -13,15 +13,16 @@ public class Peg {
         BLACK
     }
 
+    private Game game;
     private final PegSkin skin;
 
     private ReadOnlyObjectWrapper<State> state = new ReadOnlyObjectWrapper<>(State.TRANSPARENT);
     public ReadOnlyObjectProperty<State> stateProperty() {
         return state.getReadOnlyProperty();
     }
-    public Peg() {
-
+    public Peg(Game game) {
         skin = new PegSkin(this);
+        this.game = game;
     }
 
     public Node getSkin() {

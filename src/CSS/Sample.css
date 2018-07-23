@@ -97,7 +97,21 @@
      -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
 }
 
+.Sphere {
 
+}
+
+.Sphere.Active  {
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
+
+.SelectorSphere {
+
+}
+
+.SelectorSphere.Active {
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
 /*
 .PegSquare {
     -fx-background-color: white ;

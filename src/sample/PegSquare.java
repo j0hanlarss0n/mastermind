@@ -8,10 +8,10 @@ public class PegSquare {
 
     private final Peg[][] pegs = new Peg[2][2];
 
-    public PegSquare() {
+    public PegSquare(Game game) {
         for(int i = 0; i < 2; i++) {
             for(int j = 0; j < 2; j++) {
-                pegs[i][j] = new Peg();
+                pegs[i][j] = new Peg(game);
             }
         }
 

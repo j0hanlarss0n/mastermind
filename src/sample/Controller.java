@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -32,10 +33,10 @@ public class Controller implements Initializable {
     private ImageView btnUp, btnDown, btnSettings, btnPower;
 
     @FXML
-    private AnchorPane paneTop, paneUp, paneDown, paneSettings, paneStage;
+    private AnchorPane paneTop, paneDown, paneSettings, paneStage;
 
     @FXML
-    private Pane paneUp2;
+    private Pane paneUp;
 
     @FXML
     private ChoiceBox<String> choiceBoxDifficulty;
@@ -44,50 +45,26 @@ public class Controller implements Initializable {
     private Slider sliderOpacity;
 
 
+    private GameManager manager;
+
     @FXML
     private void handleButtonAction(MouseEvent event) {
         if ( event.getTarget() == btnUp) {
             System.out.println("mouse click detected! " + event.getSource().getClass());
-            paneUp2.setVisible(true);
-
-            /*
-            VBox v = new VBox(10);
-
-            HBox h1 = new HBox(10);
-
-
-            HBox h2 = new HBox(10);
-            HBox h3 = new HBox(10);
-            HBox h4 = new HBox(30);
-
-
-            Row row1 = new Row();
-            Row row2 = new Row();
-            Row row3 = new Row();
-            Row row4 = new Row();
-
-            h1.getChildren().addAll(row1.getSkin());
-            h2.getChildren().addAll(row2.getSkin());
-            h3.getChildren().addAll(row3.getSkin());
-            h4.getChildren().addAll(row4.getSkin());
-
-            v.getChildren().addAll(h1, h2, h3, h4);
-
-            paneUp2.getChildren().addAll(v);
-            */
-
-            Board board = new Board();
-            paneUp2.getChildren().addAll(board.getSkin());
-
+            paneUp.setVisible(true);
+            manager = new GameManager();
+            paneUp.getChildren().addAll(manager.getGameScene());
             paneDown.setVisible(false);
             paneSettings.setVisible(false);
         } else if ( event.getTarget() == btnDown) {
             System.out.println("mouse click detected! " + event.getSource().getClass());
+            paneUp.getChildren().removeAll(manager.getGameScene());
             paneUp.setVisible(false);
             paneDown.setVisible(true);
             paneSettings.setVisible(false);
         } else if ( event.getTarget() == btnSettings) {
             System.out.println("mouse click detected! " + event.getSource().getClass());
+            paneUp.getChildren().removeAll(manager.getGameScene());
             paneUp.setVisible(false);
             paneDown.setVisible(false);
             paneSettings.setVisible(true);
@@ -96,6 +73,7 @@ public class Controller implements Initializable {
             if (!(paneUp.isVisible() || paneDown.isVisible() || paneSettings.isVisible())) {
                 Platform.exit();
             } else {
+                paneUp.getChildren().removeAll(manager.getGameScene());
                 paneUp.setVisible(false);
                 paneDown.setVisible(false);
                 paneSettings.setVisible(false);

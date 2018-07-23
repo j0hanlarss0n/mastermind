@@ -5,15 +5,20 @@ import javafx.scene.Node;
 public class Board {
 
     private final BoardSkin skin;
-    private final HiddenRow hiddenRow = new HiddenRow();
+    private final HiddenRow hiddenRow;
     private final Row[] rows = new Row[10];
-    private final ColoredSpherePlaceholder emptyRow = new ColoredSpherePlaceholder();
-    private final SelectColorRow selectRow = new SelectColorRow();
+    private final ColoredSpherePlaceholder[] emptyRow = new ColoredSpherePlaceholder[2];
+    private final SelectColorRow selectRow;
 
-    public Board() {
+    public Board(Game game) {
         for (int i = 0; i < 10; i++) {
-            rows[i] = new Row();
+            rows[i] = new Row(game);
         }
+        for (int i = 0; i < 2; i++) {
+            emptyRow[i] = new ColoredSpherePlaceholder();
+        }
+        hiddenRow = new HiddenRow(game);
+        selectRow = new SelectColorRow(game);
         skin = new BoardSkin(this);
     }
 
@@ -26,8 +31,8 @@ public class Board {
     public SelectColorRow getSelectRow() {
         return selectRow;
     }
-    public ColoredSpherePlaceholder getEmptyRow() {
-        return emptyRow;
+    public ColoredSpherePlaceholder getEmptyRow(int i) {
+        return emptyRow[i];
     }
     public Node getSkin() {
         return skin;
