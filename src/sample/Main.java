@@ -27,7 +27,7 @@ public class Main extends Application {
     private Slider sliderOpacity;
 
     @FXML
-    private Label paneUpLabel;
+    private Label paneSettingsLabel;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

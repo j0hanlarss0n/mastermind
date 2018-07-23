@@ -5,16 +5,17 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.scene.Node;
 import javafx.scene.shape.Sphere;
 
-public class Peg extends Sphere {
+public class Peg {
     enum State {
-        EMPTY,
+        TRANSPARENT,
+        GREY,
         WHITE,
         BLACK
     }
 
     private final PegSkin skin;
 
-    private ReadOnlyObjectWrapper<State> state = new ReadOnlyObjectWrapper<>(State.EMPTY);
+    private ReadOnlyObjectWrapper<State> state = new ReadOnlyObjectWrapper<>(State.TRANSPARENT);
     public ReadOnlyObjectProperty<State> stateProperty() {
         return state.getReadOnlyProperty();
     }

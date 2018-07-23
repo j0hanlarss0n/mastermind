@@ -98,7 +98,22 @@
 }
 
 
+/*
+.PegSquare {
+    -fx-background-color: white ;
+    -fx-padding: 10 ;
+}
 
+.Row {
+    -fx-background-color: red ;
+    -fx-padding: 10 ;
+}
+
+.Peg {
+    -fx-background-fill: black, white ;
+    -fx-background-insets: 0, 1 ;
+}
+*/
 
 /*
 #testtest2:hover{

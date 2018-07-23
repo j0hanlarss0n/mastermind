@@ -1,8 +1,7 @@
 package sample;
 
 import javafx.event.EventHandler;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import javafx.application.Platform;
@@ -16,7 +15,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.input.MouseEvent;
 
@@ -37,6 +35,9 @@ public class Controller implements Initializable {
     private AnchorPane paneTop, paneUp, paneDown, paneSettings, paneStage;
 
     @FXML
+    private Pane paneUp2;
+
+    @FXML
     private ChoiceBox<String> choiceBoxDifficulty;
 
     @FXML
@@ -47,16 +48,37 @@ public class Controller implements Initializable {
     private void handleButtonAction(MouseEvent event) {
         if ( event.getTarget() == btnUp) {
             System.out.println("mouse click detected! " + event.getSource().getClass());
-            paneUp.setVisible(true);
-            HBox h = new HBox(2);
+            paneUp2.setVisible(true);
 
-            ColoredSphere ball = new ColoredSphere();
+            /*
+            VBox v = new VBox(10);
 
-            PegSquare pegs = new PegSquare();
+            HBox h1 = new HBox(10);
 
-            Row row = new Row();
-            h.getChildren().addAll(ball.getSkin(), pegs.getSkin(), row.getSkin());
-            paneDown.getChildren().addAll(h);
+
+            HBox h2 = new HBox(10);
+            HBox h3 = new HBox(10);
+            HBox h4 = new HBox(30);
+
+
+            Row row1 = new Row();
+            Row row2 = new Row();
+            Row row3 = new Row();
+            Row row4 = new Row();
+
+            h1.getChildren().addAll(row1.getSkin());
+            h2.getChildren().addAll(row2.getSkin());
+            h3.getChildren().addAll(row3.getSkin());
+            h4.getChildren().addAll(row4.getSkin());
+
+            v.getChildren().addAll(h1, h2, h3, h4);
+
+            paneUp2.getChildren().addAll(v);
+            */
+
+            Board board = new Board();
+            paneUp2.getChildren().addAll(board.getSkin());
+
             paneDown.setVisible(false);
             paneSettings.setVisible(false);
         } else if ( event.getTarget() == btnDown) {
