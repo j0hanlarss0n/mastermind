@@ -1,8 +1,11 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.DataClass;
 
 import javafx.scene.Node;
+import se.fullstackare.mastermind.Game;
+import se.fullstackare.mastermind.Skinnable;
+import se.fullstackare.mastermind.Spheres.SkinClass.PegSquareSkin;
 
-public class PegSquare implements Skinnable{
+public class PegSquare implements Skinnable {
 
     private final PegSquareSkin skin;
 

@@ -1,6 +1,9 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.DataClass;
 
 import javafx.scene.Node;
+import se.fullstackare.mastermind.Game;
+import se.fullstackare.mastermind.Skinnable;
+import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 public abstract class Sphere implements Skinnable {
 

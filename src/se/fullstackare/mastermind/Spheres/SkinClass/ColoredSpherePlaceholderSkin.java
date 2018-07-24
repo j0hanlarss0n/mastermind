@@ -1,9 +1,10 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.SkinClass;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
+import se.fullstackare.mastermind.Spheres.DataClass.ColoredSpherePlaceholder;
 
 public class ColoredSpherePlaceholderSkin extends Pane {
 

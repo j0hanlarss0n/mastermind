@@ -1,8 +1,10 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.DataClass;
 
 import javafx.scene.Node;
+import se.fullstackare.mastermind.Skinnable;
+import se.fullstackare.mastermind.Spheres.SkinClass.ColoredSpherePlaceholderSkin;
 
-public class ColoredSpherePlaceholder implements Skinnable{
+public class ColoredSpherePlaceholder implements Skinnable {
 
     private final ColoredSpherePlaceholderSkin skin;
 

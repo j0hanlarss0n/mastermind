@@ -1,11 +1,14 @@
 
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.DataClass;
 
 
 
 import javafx.scene.Node;
+import se.fullstackare.mastermind.Game;
+import se.fullstackare.mastermind.Skinnable;
+import se.fullstackare.mastermind.Spheres.SkinClass.MarkerSphereSkin;
 
-public class MarkerSphere implements Skinnable{
+public class MarkerSphere implements Skinnable {
     private Game game;
     private final MarkerSphereSkin skin;
 

@@ -1,6 +1,10 @@
 package se.fullstackare.mastermind;
 
 import javafx.scene.Node;
+import se.fullstackare.mastermind.Rows.DataClass.BoardRow;
+import se.fullstackare.mastermind.Rows.DataClass.HiddenRow;
+import se.fullstackare.mastermind.Rows.DataClass.SelectColorRow;
+import se.fullstackare.mastermind.Spheres.DataClass.ColoredSpherePlaceholder;
 
 public class Board implements Skinnable{
 

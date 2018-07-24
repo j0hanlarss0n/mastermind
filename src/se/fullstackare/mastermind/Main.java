@@ -27,7 +27,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("mastermind.fxml"));
         Parent root = loader.load();
         Controller controller = loader.getController();
 
@@ -93,7 +93,7 @@ public class Main extends Application {
 
         Scene scene = new Scene (root);
         scene.setFill(Color.TRANSPARENT);
-        scene.getStylesheets().add(getClass().getResource("..\\CSS\\Sample.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("..\\..\\..\\CSS\\Sample.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setOpacity(0.85);
         primaryStage.setAlwaysOnTop(true);

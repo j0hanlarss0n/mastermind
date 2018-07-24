@@ -1,7 +1,11 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Rows.DataClass;
 
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
+import se.fullstackare.mastermind.Game;
+import se.fullstackare.mastermind.Rows.SkinClass.SelectColorRowSkin;
+import se.fullstackare.mastermind.Spheres.DataClass.SelectorSphere;
+import se.fullstackare.mastermind.Skinnable;
 
 import java.util.ArrayList;
 import java.util.List;

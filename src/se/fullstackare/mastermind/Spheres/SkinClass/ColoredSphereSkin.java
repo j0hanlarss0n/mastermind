@@ -1,4 +1,4 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.SkinClass;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -6,6 +6,7 @@ import javafx.scene.paint.Material;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import javafx.scene.input.MouseEvent;
+import se.fullstackare.mastermind.Spheres.DataClass.ColoredSphere;
 
 public class ColoredSphereSkin extends Pane {
 

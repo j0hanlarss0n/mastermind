@@ -23,12 +23,12 @@
                         <Circle centerX="25.0" centerY="25.0" fill="#3f4c61" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circleGlow" />
                         <ImageView fx:id="btnUp" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
                            <image>
-                              <Image url="@../images/upGlow.png" />
+                              <Image url="@../../../images/upGlow.png" />
                            </image>
                         </ImageView>
                         <ImageView id="upIcon" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="icon" x="-3.0" y="-6.0">
                            <image>
-                              <Image url="@../images/up.png" />
+                              <Image url="@../../../images/up.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -43,12 +43,12 @@
                         <Circle centerX="25.0" centerY="25.0" fill="#3f4c61" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circleGlow" />
                         <ImageView fx:id="btnDown" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
                            <image>
-                              <Image url="@../images/downGlow.png" />
+                              <Image url="@../../../images/downGlow.png" />
                            </image>
                         </ImageView>
                         <ImageView id="downIcon" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="icon" x="-3.0" y="-6.0">
                            <image>
-                              <Image url="@../images/down.png" />
+                              <Image url="@../../../images/down.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -63,12 +63,12 @@
                         <Circle centerX="25.0" centerY="25.0" fill="#3f4c61" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circleGlow" />
                         <ImageView fx:id="btnSettings" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-4.0" y="-4.0">
                            <image>
-                              <Image url="@../images/settingsGlow.png" />
+                              <Image url="@../../../images/settingsGlow.png" />
                            </image>
                         </ImageView>
                         <ImageView id="settingsIcon" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="icon" x="-4.0" y="-4.0">
                            <image>
-                              <Image url="@../images/settings.png" />
+                              <Image url="@../../../images/settings.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -83,12 +83,12 @@
                         <Circle centerX="25.0" centerY="25.0" fill="#3f4c61" radius="35.0" stroke="#ffffff00" strokeType="INSIDE" styleClass="circleGlow" />
                         <ImageView fx:id="btnPower" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="iconGlow" x="-3.0" y="-6.0">
                            <image>
-                              <Image url="@../images/powerGlow.png" />
+                              <Image url="@../../../images/powerGlow.png" />
                            </image>
                         </ImageView>
                         <ImageView id="powerIcon" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="icon" x="-3.0" y="-6.0">
                            <image>
-                              <Image url="@../images/power.png" />
+                              <Image url="@../../../images/power.png" />
                            </image>
                         </ImageView>
                      </children>

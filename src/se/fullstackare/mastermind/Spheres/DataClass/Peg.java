@@ -1,10 +1,13 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.DataClass;
 
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.scene.Node;
+import se.fullstackare.mastermind.Game;
+import se.fullstackare.mastermind.Skinnable;
+import se.fullstackare.mastermind.Spheres.SkinClass.PegSkin;
 
-public class Peg implements Skinnable{
+public class Peg implements Skinnable {
     enum State {
         TRANSPARENT,
         GREY,

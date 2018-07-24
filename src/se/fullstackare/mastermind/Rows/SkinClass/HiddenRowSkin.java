@@ -1,6 +1,7 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Rows.SkinClass;
 
 import javafx.scene.layout.HBox;
+import se.fullstackare.mastermind.Rows.DataClass.HiddenRow;
 
 public class HiddenRowSkin extends HBox {
 

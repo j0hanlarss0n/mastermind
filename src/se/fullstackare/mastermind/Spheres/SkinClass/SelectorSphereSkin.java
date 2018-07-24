@@ -1,27 +1,27 @@
-
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.SkinClass;
 
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
+import se.fullstackare.mastermind.Spheres.DataClass.SelectorSphere;
 
-public class MarkerSphereSkin extends Pane {
+public class SelectorSphereSkin extends Pane {
 
     public PhongMaterial material = new PhongMaterial();
     private final Sphere sphere = new Sphere(20);
 
-    public MarkerSphereSkin(final MarkerSphere markerSphere) {
-        getStyleClass().add("MarkerSphere");
-        material.setDiffuseColor(Color.GOLD);
+    public SelectorSphereSkin(final SelectorSphere selectorSphere, Color color) {
+        getStyleClass().add("SelectorSphere");
+        material.setDiffuseColor(color);
         material.setSpecularColor(Color.BLACK);
         sphere.setMaterial(material);
         sphere.setTranslateX(sphere.getRadius());
         sphere.setTranslateY(sphere.getRadius());
         getChildren().setAll(sphere);
 
-        setOnMousePressed((MouseEvent event) -> markerSphere.pressed("red"));
+        setOnMousePressed((MouseEvent event) -> selectorSphere.pressed());
 
     }
 }

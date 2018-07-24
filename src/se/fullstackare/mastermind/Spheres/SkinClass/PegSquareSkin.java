@@ -1,6 +1,7 @@
-package se.fullstackare.mastermind;
+package se.fullstackare.mastermind.Spheres.SkinClass;
 
 import javafx.scene.layout.GridPane;
+import se.fullstackare.mastermind.Spheres.DataClass.PegSquare;
 
 public class PegSquareSkin extends GridPane {
 
