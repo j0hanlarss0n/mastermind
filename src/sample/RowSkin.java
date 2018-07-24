@@ -11,9 +11,10 @@ public class RowSkin extends HBox {
         for (int i = 0; i < 4; i++) {
             getChildren().add(row.getSphere(i).getSkin());
         }
-        getChildren().add(row.getEmptySphere().getSkin());
-
+        getChildren().add(row.getEmptySphere(0).getSkin());
         getChildren().add(row.getPegSquare().getSkin());
+        getChildren().add(row.getEmptySphere(1).getSkin());
+        getChildren().add(row.getMarker().getSkin());
     }
 
 }
