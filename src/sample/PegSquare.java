@@ -2,7 +2,7 @@ package sample;
 
 import javafx.scene.Node;
 
-public class PegSquare {
+public class PegSquare implements Skinnable{
 
     private final PegSquareSkin skin;
 

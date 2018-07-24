@@ -3,7 +3,7 @@ package sample;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 
-public class SelectorSphere {
+public class SelectorSphere implements Skinnable{
     private Color color;
     private Game game;
     private final SelectorSphereSkin skin;

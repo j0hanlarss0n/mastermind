@@ -5,7 +5,7 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.scene.Node;
 import javafx.scene.shape.Sphere;
 
-public class Peg {
+public class Peg implements Skinnable{
     enum State {
         TRANSPARENT,
         GREY,

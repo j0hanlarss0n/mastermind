@@ -3,7 +3,7 @@ package sample;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 
-public class Game {
+public class Game implements Skinnable{
     private GameSkin skin;
     private Board board = new Board(this);
 

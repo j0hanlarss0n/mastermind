@@ -2,17 +2,17 @@ package sample;
 
 import javafx.scene.Node;
 
-public class Board {
+public class Board implements Skinnable{
 
     private final BoardSkin skin;
     private final HiddenRow hiddenRow;
-    private final Row[] rows = new Row[10];
+    private final BoardRow[] boardRows = new BoardRow[10];
     private final ColoredSpherePlaceholder[] emptyRow = new ColoredSpherePlaceholder[2];
     private final SelectColorRow selectRow;
 
     public Board(Game game) {
         for (int i = 0; i < 10; i++) {
-            rows[i] = new Row(game);
+            boardRows[i] = new BoardRow(game);
         }
         for (int i = 0; i < 2; i++) {
             emptyRow[i] = new ColoredSpherePlaceholder();
@@ -22,8 +22,8 @@ public class Board {
         skin = new BoardSkin(this);
     }
 
-    public Row getRow(int i) {
-        return rows[i];
+    public BoardRow getRow(int i) {
+        return boardRows[i];
     }
     public HiddenRow getHiddenRow() {
         return hiddenRow;

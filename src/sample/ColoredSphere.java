@@ -3,7 +3,7 @@ package sample;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 
-public class ColoredSphere {
+public class ColoredSphere implements Skinnable{
 
 
 

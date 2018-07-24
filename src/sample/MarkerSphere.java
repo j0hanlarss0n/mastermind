@@ -5,7 +5,7 @@ package sample;
 
 import javafx.scene.Node;
 
-public class MarkerSphere {
+public class MarkerSphere implements Skinnable{
     private Game game;
     private final MarkerSphereSkin skin;
 

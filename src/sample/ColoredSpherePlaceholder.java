@@ -2,7 +2,7 @@ package sample;
 
 import javafx.scene.Node;
 
-public class ColoredSpherePlaceholder{
+public class ColoredSpherePlaceholder implements Skinnable{
 
     private final ColoredSpherePlaceholderSkin skin;
 
