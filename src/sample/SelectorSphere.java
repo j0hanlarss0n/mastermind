@@ -3,18 +3,17 @@ package sample;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 
-public class SelectorSphere implements Skinnable{
+public class SelectorSphere extends Sphere implements Skinnable{
     private Color color;
-    private Game game;
     private final SelectorSphereSkin skin;
 
     public SelectorSphere(Game game, Color color) {
+        super(game);
         this.color = color;
-        this.game = game;
         skin = new SelectorSphereSkin(this, color);
     }
 
-    public void pressed(String color) {
+    public void pressed() {
         System.out.println("Color in pressed: " + color);
     }
 

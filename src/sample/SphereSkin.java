@@ -1,4 +1,4 @@
-/*package sample;
+package sample;
 
 import javafx.scene.layout.Pane;
 
@@ -11,4 +11,4 @@ public class SphereSkin extends Pane {
     public SphereSkin(Sphere sphere) {
 
     }
-}*/
+}

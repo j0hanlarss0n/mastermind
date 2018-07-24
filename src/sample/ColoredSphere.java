@@ -5,46 +5,17 @@ import javafx.scene.paint.Color;
 
 public class ColoredSphere implements Skinnable{
 
-
-
-
-    enum ColorState {
-        TRANSPARENT,
-        GREY,
-        RED,
-        GREEN,
-        YELLOW,
-        ORANGE,
-        PINK,
-        PURPLE,
-        WHITE,
-        BLACK
-    }
-
     private Color color;
-
-    private Game game;
-    private ColorState colorState;
 
     private final ColoredSphereSkin skin;
 
     public ColoredSphere(Game game) {
         skin = new ColoredSphereSkin(this);
-        this.game = game;
     }
 
     public void pressed(String color) {
         System.out.println("Color in pressed: " + color);
     }
-
-    public ColorState getColorState() {
-        return colorState;
-    }
-
-    public void setColorState(ColorState colorState) {
-        this.colorState = colorState;
-    }
-
 
     public Color getColor() {
         return color;

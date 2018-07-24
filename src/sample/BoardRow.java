@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.scene.Node;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,23 +9,28 @@ import java.util.List;
 public class BoardRow implements Skinnable{
 
     private final BoardRowSkin skin;
-    private final List<Class<? extends Skinnable>> rowItems = new ArrayList<>();
+    private List<Skinnable> rowItems = new ArrayList<>();
 
 
     private final ColoredSphere[] spheres = new ColoredSphere[4];
     private final ColoredSpherePlaceholder[] emptySpheres = new ColoredSpherePlaceholder[2];
-    private final MarkerSphere marker;
-    private final PegSquare pegs;
+    //private final MarkerSphere marker;
+    //private final PegSquare pegs;
 
     public BoardRow(Game game) {
-        /*
+
+
         for(int i = 0; i < 4; i++) {
-            ColoredSphere cs = new ColoredSphere(game);
-            rowItems.add(cs);
+            rowItems.add(new ColoredSphere(game));
         }
-        */
+        rowItems.add(new ColoredSpherePlaceholder());
+        rowItems.add(new PegSquare(game));
+        rowItems.add(new ColoredSpherePlaceholder());
+        rowItems.add(new MarkerSphere(game));
 
 
+
+        /*
         for(int i = 0; i < 4; i++) {
             spheres[i] = new ColoredSphere(game);
         }
@@ -33,11 +39,11 @@ public class BoardRow implements Skinnable{
         }
         marker = new MarkerSphere(game);
         pegs = new PegSquare(game);
-
+        */
         skin = new BoardRowSkin(this);
     }
 
-
+    /*
     public ColoredSphere getSphere(int i) {
         return spheres[i];
     }
@@ -49,6 +55,11 @@ public class BoardRow implements Skinnable{
     }
     public PegSquare getPegSquare() {
         return pegs;
+    }
+    */
+
+    public List<Skinnable> getSkinnableItems() {
+        return rowItems;
     }
 
     public Node getSkin() {

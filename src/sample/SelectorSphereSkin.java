@@ -20,7 +20,7 @@ public class SelectorSphereSkin extends Pane {
         sphere.setTranslateY(sphere.getRadius());
         getChildren().setAll(sphere);
 
-        setOnMousePressed((MouseEvent event) -> selectorSphere.pressed("red"));
+        setOnMousePressed((MouseEvent event) -> selectorSphere.pressed());
 
     }
 }

@@ -1,14 +1,17 @@
-/*package sample;
+package sample;
+
+import javafx.scene.Node;
 
 public abstract class Sphere implements Skinnable {
 
     private Game game;
-
-    private final Class<? extends SphereSkin> skin;
+    private Class<? extends SphereSkin> skin;
 
     public Sphere(Game game) {
-        skin = new SphereSkin(this);
         this.game = game;
     }
 
-}*/
+    abstract public void pressed();
+    abstract public Node getSkin();
+
+}

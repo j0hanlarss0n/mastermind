@@ -8,9 +8,12 @@ public class HiddenRowSkin extends HBox {
         getStyleClass().add("HiddenRow");
         setSpacing(10.0);
 
+        hiddenRow.getSkinnableItems().forEach(item -> getChildren().add(item.getSkin()));
+        /*
         for (int i = 0; i < 4; i++) {
             getChildren().add(hiddenRow.getSphere(i).getSkin());
         }
+        */
     }
 
 }
