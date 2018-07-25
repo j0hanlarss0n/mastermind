@@ -8,6 +8,8 @@ import se.fullstackare.mastermind.Spheres.DataClass.Peg;
 
 public class PegSkin extends Pane {
 
+    //TODO-Johan Make class extend SphereSkin
+
     public PhongMaterial material = new PhongMaterial();
     private final Sphere sphere = new Sphere(10);
 

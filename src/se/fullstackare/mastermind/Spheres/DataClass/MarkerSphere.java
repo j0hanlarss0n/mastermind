@@ -8,16 +8,14 @@ import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Skinnable;
 import se.fullstackare.mastermind.Spheres.SkinClass.MarkerSphereSkin;
 
-public class MarkerSphere implements Skinnable {
-    private Game game;
-    private final MarkerSphereSkin skin;
+public class MarkerSphere extends Sphere implements Skinnable {
 
     public MarkerSphere(Game game) {
-        this.game = game;
+        super(game);
         skin = new MarkerSphereSkin(this);
     }
 
-    public void pressed(String color) {
+    public void pressed() {
         System.out.println("Color in pressed: " + color);
     }
 

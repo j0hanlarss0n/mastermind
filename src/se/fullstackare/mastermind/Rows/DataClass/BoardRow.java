@@ -20,9 +20,9 @@ public class BoardRow extends Row implements Skinnable {
             rowItems.add(new ColoredSphere(game));
         }
 
-        rowItems.add(new ColoredSpherePlaceholder());
+        rowItems.add(new ColoredSpherePlaceholder(game));
         rowItems.add(new PegSquare(game));
-        rowItems.add(new ColoredSpherePlaceholder());
+        rowItems.add(new ColoredSpherePlaceholder(game));
         rowItems.add(new MarkerSphere(game));
 
         skin = new BoardRowSkin(this);

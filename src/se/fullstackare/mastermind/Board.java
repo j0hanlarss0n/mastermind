@@ -19,7 +19,7 @@ public class Board implements Skinnable{
             boardRows[i] = new BoardRow(game);
         }
         for (int i = 0; i < 2; i++) {
-            emptyRow[i] = new ColoredSpherePlaceholder();
+            emptyRow[i] = new ColoredSpherePlaceholder(game);
         }
         hiddenRow = new HiddenRow(game);
         selectRow = new SelectColorRow(game);

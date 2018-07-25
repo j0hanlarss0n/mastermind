@@ -8,6 +8,8 @@ import se.fullstackare.mastermind.Skinnable;
 import se.fullstackare.mastermind.Spheres.SkinClass.PegSkin;
 
 public class Peg implements Skinnable {
+
+    //TODO-Johan Make class extend Sphere
     enum State {
         TRANSPARENT,
         GREY,

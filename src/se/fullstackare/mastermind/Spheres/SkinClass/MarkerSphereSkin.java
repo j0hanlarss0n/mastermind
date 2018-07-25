@@ -8,21 +8,11 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import se.fullstackare.mastermind.Spheres.DataClass.MarkerSphere;
 
-public class MarkerSphereSkin extends Pane {
-
-    public PhongMaterial material = new PhongMaterial();
-    private final Sphere sphere = new Sphere(20);
+public class MarkerSphereSkin extends SphereSkin {
 
     public MarkerSphereSkin(final MarkerSphere markerSphere) {
+        super(markerSphere);
         getStyleClass().add("MarkerSphere");
-        material.setDiffuseColor(Color.GOLD);
-        material.setSpecularColor(Color.BLACK);
-        sphere.setMaterial(material);
-        sphere.setTranslateX(sphere.getRadius());
-        sphere.setTranslateY(sphere.getRadius());
-        getChildren().setAll(sphere);
-
-        setOnMousePressed((MouseEvent event) -> markerSphere.pressed("red"));
-
+        setColor(Color.GOLD);
     }
 }

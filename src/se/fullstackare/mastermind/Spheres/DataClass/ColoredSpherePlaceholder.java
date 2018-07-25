@@ -1,14 +1,14 @@
 package se.fullstackare.mastermind.Spheres.DataClass;
 
 import javafx.scene.Node;
+import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Skinnable;
 import se.fullstackare.mastermind.Spheres.SkinClass.ColoredSpherePlaceholderSkin;
 
-public class ColoredSpherePlaceholder implements Skinnable {
+public class ColoredSpherePlaceholder extends Sphere implements Skinnable {
 
-    private final ColoredSpherePlaceholderSkin skin;
-
-    public ColoredSpherePlaceholder() {
+    public ColoredSpherePlaceholder(Game game) {
+        super(game);
         skin = new ColoredSpherePlaceholderSkin(this);
     }
 
