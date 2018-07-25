@@ -12,8 +12,8 @@ public class ColoredSpherePlaceholder implements Skinnable {
         skin = new ColoredSpherePlaceholderSkin(this);
     }
 
-    public void pressed(String color) {
-        System.out.println("Color in pressed: " + color);
+    public void pressed() {
+        System.out.println("Color in pressed: ");
     }
 
     public Node getSkin() {

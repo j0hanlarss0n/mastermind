@@ -1,21 +1,15 @@
 package se.fullstackare.mastermind.Rows.DataClass;
 
-import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Rows.SkinClass.SelectColorRowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.SelectorSphere;
-import se.fullstackare.mastermind.Skinnable;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class SelectColorRow {
-    private final SelectColorRowSkin skin;
-    private List<Skinnable> rowItems = new ArrayList<>();
-    private final SelectorSphere[] spheres = new SelectorSphere[8];
+public class SelectColorRow extends Row{
 
     public SelectColorRow(Game game) {
+        super(game);
 
         rowItems.add(new SelectorSphere(game, Color.WHITE));
         rowItems.add(new SelectorSphere(game, Color.DARKSEAGREEN));
@@ -25,14 +19,7 @@ public class SelectColorRow {
         rowItems.add(new SelectorSphere(game, Color.PURPLE));
         rowItems.add(new SelectorSphere(game, Color.ROYALBLUE));
         rowItems.add(new SelectorSphere(game, Color.RED));
+
         skin = new SelectColorRowSkin(this);
-    }
-
-    public List<Skinnable> getSkinnableItems() {
-        return rowItems;
-    }
-
-    public Node getSkin() {
-        return skin;
     }
 }

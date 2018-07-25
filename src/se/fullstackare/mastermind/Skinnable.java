@@ -3,5 +3,5 @@ package se.fullstackare.mastermind;
 import javafx.scene.Node;
 
 public interface Skinnable {
-    Node getSkin();
+    <T extends Node> T getSkin();
 }

@@ -6,29 +6,14 @@ import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Skinnable;
 import se.fullstackare.mastermind.Spheres.SkinClass.ColoredSphereSkin;
 
-public class ColoredSphere implements Skinnable {
-
-    private Color color;
-
-    private final ColoredSphereSkin skin;
+public class ColoredSphere extends Sphere implements Skinnable {
 
     public ColoredSphere(Game game) {
+        super(game);
         skin = new ColoredSphereSkin(this);
     }
 
-    public void pressed(String color) {
-        System.out.println("Color in pressed: " + color);
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        skin.setColor(color);
-    }
-
-    public Node getSkin() {
-        return skin;
+    public void pressed() {
+        System.out.println("Color in pressed: " + getColor().toString());
     }
 }

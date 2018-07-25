@@ -1,5 +1,6 @@
 package se.fullstackare.mastermind.Spheres.SkinClass;
 
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -20,7 +21,7 @@ public class ColoredSpherePlaceholderSkin extends Pane {
        sphere.setTranslateY(sphere.getRadius());
        getChildren().setAll(sphere);
 
-       //setOnMousePressed((MouseEvent event) -> event.consume());
+       setOnMousePressed((MouseEvent event) -> coloredSpherePlaceholder.pressed());
 
    }
 }

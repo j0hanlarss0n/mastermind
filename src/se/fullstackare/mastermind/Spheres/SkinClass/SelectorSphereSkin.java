@@ -7,21 +7,11 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import se.fullstackare.mastermind.Spheres.DataClass.SelectorSphere;
 
-public class SelectorSphereSkin extends Pane {
-
-    public PhongMaterial material = new PhongMaterial();
-    private final Sphere sphere = new Sphere(20);
+public class SelectorSphereSkin extends SphereSkin {
 
     public SelectorSphereSkin(final SelectorSphere selectorSphere, Color color) {
+        super(selectorSphere);
         getStyleClass().add("SelectorSphere");
-        material.setDiffuseColor(color);
-        material.setSpecularColor(Color.BLACK);
-        sphere.setMaterial(material);
-        sphere.setTranslateX(sphere.getRadius());
-        sphere.setTranslateY(sphere.getRadius());
-        getChildren().setAll(sphere);
-
-        setOnMousePressed((MouseEvent event) -> selectorSphere.pressed());
-
+        setColor(color);
     }
 }
