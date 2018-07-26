@@ -10,6 +10,7 @@ public class HiddenSphere extends Sphere implements Skinnable {
     public HiddenSphere(Game game, Color color, int radius) {
         super(game, color, radius);
         skin = new SphereSkin(this, color, "ColoredSphere");
+        skin.ignoreDragging();
     }
 
     public void pressed() {

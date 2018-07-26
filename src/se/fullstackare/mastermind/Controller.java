@@ -1,5 +1,6 @@
 package se.fullstackare.mastermind;
 
+import javafx.scene.Parent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -55,7 +56,7 @@ public class Controller implements Initializable {
             paneSettings.setVisible(false);
         } else if ( event.getTarget() == btnDown) {
             System.out.println("mouse click detected! " + event.getSource().getClass());
-            paneUp.getChildren().removeAll(manager.getGameScene());
+            paneUp.getChildren().remove(manager.getGameScene());
             paneUp.setVisible(false);
             paneDown.setVisible(true);
             paneSettings.setVisible(false);

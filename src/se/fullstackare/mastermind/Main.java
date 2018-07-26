@@ -67,6 +67,13 @@ public class Main extends Application {
             }
         });
 
+        root.addEventFilter(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println("mouse click detected! " + mouseEvent.getSource().getClass().getName());
+            }
+        });
+
         //root.addEventFilter();
 
 

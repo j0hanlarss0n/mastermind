@@ -11,6 +11,7 @@ public class SelectorSphere extends Sphere implements Skinnable {
         super(game);
         this.color = color;
         skin = new SphereSkin(this, color, "SelectorSphere");
+        skin.ignoreDragging();
     }
     public void pressed() {
         System.out.println("Color in pressed: " + getColor() + ". Sphere's colorVar is: " + color);

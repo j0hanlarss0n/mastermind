@@ -25,9 +25,6 @@ public class Game implements Skinnable{
     }
 
     public void setCurrentRow(BoardRow row) {
-        if (currentRow != null) {
-            currentRow.disableEventListener();
-        }
         currentRow = row;
         currentRow.activateEventListener();
         currentRow.activateMarker();
@@ -47,10 +44,16 @@ public class Game implements Skinnable{
                 }
             }
         }
-
+        //TODO-Johan make it so that current row handles deactivation and that next row handles activation
+        if (currentRow != null) {
+            currentRow.disableEventListener();
+        }
         if (lastRow != null) {
             System.out.println("lastRow has a value");
+            currentRow.deactivateMarker();
             setCurrentRow(lastRow);
+        } else {
+            System.out.println("Game ended");
         }
     }
 
@@ -63,7 +66,9 @@ public class Game implements Skinnable{
         System.out.println("Selected color changed to: " + selectedColor);
     }
 
-
+    public void removeBoard() {
+        board.remove();
+    }
 
 
 

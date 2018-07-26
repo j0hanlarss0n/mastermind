@@ -26,6 +26,7 @@ public class Peg extends Sphere implements Skinnable {
     public Peg(Game game, Color color, int radius) {
         super(game, color, radius);
         skin = new SphereSkin(this, color,"Peg");
+        skin.ignoreDragging();
         this.game = game;
     }
 

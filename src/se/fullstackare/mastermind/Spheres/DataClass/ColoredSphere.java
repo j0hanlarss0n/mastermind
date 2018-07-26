@@ -10,6 +10,7 @@ public class ColoredSphere extends Sphere implements Skinnable {
     public ColoredSphere(Game game, Color color, int radius) {
         super(game, color, radius);
         skin = new SphereSkin(this, Color.GREY, "ColoredSphere");
+        skin.ignoreDragging();
     }
 
     public void pressed() {

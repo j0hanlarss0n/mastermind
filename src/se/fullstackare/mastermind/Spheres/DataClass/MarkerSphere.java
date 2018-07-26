@@ -13,13 +13,14 @@ public class MarkerSphere extends Sphere implements Skinnable {
 
     public MarkerSphere(Game game) {
         super(game);
-        skin = new SphereSkin(this, Color.TRANSPARENT,"MarkerSphere");
+        skin = new SphereSkin(this, Color.GREEN,"MarkerSphere");
+        skin.ignoreDragging();
     }
+//TODO-Johan fix the problem with nondisapearing
 
     public void pressed() {
         System.out.println("Marker pressed! Changing row");
         game.changeToNextRow();
-        setColor(Color.TRANSPARENT);
     }
 
     public Node getSkin() {

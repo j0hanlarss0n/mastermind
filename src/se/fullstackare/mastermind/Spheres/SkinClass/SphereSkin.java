@@ -63,10 +63,20 @@ public class SphereSkin extends Pane {
 
     public void addEventHandler(){
         setOnMousePressed((MouseEvent event) -> mySphere.pressed());
+
+    }
+
+    public void ignoreDragging(){
+        setOnMouseDragged((MouseEvent event) -> event.consume());
     }
 
     public void removeEventHandler(){
         setOnMousePressed((MouseEvent event) -> System.out.println("Sphere is ignoring clicks"));
+    }
+
+    public void remove() {
+        this.getChildren().clear();
+        this.getChildren().removeAll();
     }
 
 }

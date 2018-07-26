@@ -7,6 +7,7 @@ import se.fullstackare.mastermind.Rows.DataClass.Row;
 import se.fullstackare.mastermind.Rows.DataClass.SelectColorRow;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.ColoredSpherePlaceholder;
+import se.fullstackare.mastermind.Spheres.DataClass.Sphere;
 import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 import java.util.ArrayList;
@@ -54,5 +55,17 @@ public class Board implements Skinnable{
 
     public Node getSkin() {
         return skin;
+    }
+
+    public void remove() {
+        for (Skinnable row : rowItems) {
+            if (row instanceof  Row) {
+                for (Skinnable item : ((Row) row).getSkinnableItems()) {
+                    if (item instanceof Sphere) {
+                        ((SphereSkin) item.getSkin()).remove();
+                    }
+                }
+            }
+        }
     }
 }
