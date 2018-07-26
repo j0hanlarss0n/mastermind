@@ -1,6 +1,7 @@
 package se.fullstackare.mastermind.Rows.DataClass;
 
 import javafx.scene.Node;
+import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.*;
 import se.fullstackare.mastermind.Rows.SkinClass.BoardRowSkin;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
@@ -17,7 +18,7 @@ public class BoardRow extends Row implements Skinnable {
     public BoardRow(Game game) {
         super(game);
         for(int i = 0; i < 4; i++) {
-            rowItems.add(new ColoredSphere(game));
+            rowItems.add(new ColoredSphere(game, Color.GREY, 20));
         }
 
         rowItems.add(new ColoredSpherePlaceholder(game));
@@ -25,6 +26,6 @@ public class BoardRow extends Row implements Skinnable {
         rowItems.add(new ColoredSpherePlaceholder(game));
         rowItems.add(new MarkerSphere(game));
 
-        skin = new BoardRowSkin(this);
+        skin = new RowSkin(this, "BoardRow");
     }
 }

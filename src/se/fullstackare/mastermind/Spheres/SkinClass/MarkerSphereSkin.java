@@ -10,9 +10,7 @@ import se.fullstackare.mastermind.Spheres.DataClass.MarkerSphere;
 
 public class MarkerSphereSkin extends SphereSkin {
 
-    public MarkerSphereSkin(final MarkerSphere markerSphere) {
-        super(markerSphere);
-        getStyleClass().add("MarkerSphere");
-        setColor(Color.GOLD);
+    public MarkerSphereSkin(final MarkerSphere markerSphere, Color color, String styleClass) {
+        super(markerSphere, Color.GOLD, styleClass);
     }
 }

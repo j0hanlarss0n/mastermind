@@ -7,21 +7,45 @@ import javafx.scene.paint.Material;
 import javafx.scene.paint.PhongMaterial;
 import se.fullstackare.mastermind.Spheres.DataClass.Sphere;
 
-public abstract class SphereSkin extends Pane {
+public class SphereSkin extends Pane {
 
 
     //TODO-Johan Make all SphereSkins into just one, this.
     protected PhongMaterial material = new PhongMaterial();
-    protected javafx.scene.shape.Sphere sphere = new javafx.scene.shape.Sphere(20);
+    protected javafx.scene.shape.Sphere sphere;
     protected Color color;
 
+
     public SphereSkin (final Sphere mySphere) {
+        getStyleClass().add("DefaultSphere");
+
+        sphere = new javafx.scene.shape.Sphere();
+        sphere.setRadius(mySphere.getRadius());
         sphere.setTranslateX(sphere.getRadius());
         sphere.setTranslateY(sphere.getRadius());
+
+        setColor(Color.GREY);
+
         getChildren().setAll(sphere);
 
         setOnMousePressed((MouseEvent event) -> mySphere.pressed());
     }
+
+    public SphereSkin (final Sphere mySphere, Color color) {
+        this(mySphere);
+        setColor(color);
+    }
+
+    public SphereSkin (final Sphere mySphere, String styleClass) {
+        this(mySphere);
+        getStyleClass().add(styleClass);
+    }
+
+    public SphereSkin (final Sphere mySphere, Color color, String styleClass) {
+        this(mySphere, color);
+        getStyleClass().add(styleClass);
+    }
+
 
     public void setColor(Color color) {
         material.setDiffuseColor(color);

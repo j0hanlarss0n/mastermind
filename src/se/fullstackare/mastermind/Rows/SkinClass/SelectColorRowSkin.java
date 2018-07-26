@@ -5,8 +5,8 @@ import se.fullstackare.mastermind.Rows.DataClass.SelectColorRow;
 
 public class SelectColorRowSkin extends RowSkin {
 
-    public SelectColorRowSkin(SelectColorRow selectColorRow) {
-        super(selectColorRow);
+    public SelectColorRowSkin(SelectColorRow selectColorRow, String styleClass) {
+        super(selectColorRow, styleClass);
         getStyleClass().add("SelectColorRow");
     }
 }

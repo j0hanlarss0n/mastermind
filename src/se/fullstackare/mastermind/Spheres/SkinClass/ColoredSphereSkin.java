@@ -10,10 +10,7 @@ import se.fullstackare.mastermind.Spheres.DataClass.ColoredSphere;
 
 public class ColoredSphereSkin extends SphereSkin {
 
-    public ColoredSphereSkin(final ColoredSphere coloredSphere) {
-        super(coloredSphere);
-        getStyleClass().add("Sphere");
-        setColor(Color.GREY);
+    public ColoredSphereSkin(final ColoredSphere coloredSphere, Color color, String styleClass) {
+        super(coloredSphere, Color.GREY, styleClass);
     }
-
 }

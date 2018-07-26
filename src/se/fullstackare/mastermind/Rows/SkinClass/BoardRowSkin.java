@@ -5,8 +5,8 @@ import se.fullstackare.mastermind.Rows.DataClass.BoardRow;
 
 public class BoardRowSkin extends RowSkin {
 
-    public BoardRowSkin(BoardRow boardRow) {
-        super(boardRow);
+    public BoardRowSkin(BoardRow boardRow, String styleClass) {
+        super(boardRow, styleClass);
         getStyleClass().add("BoardRow");
     }
 }

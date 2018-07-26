@@ -9,9 +9,7 @@ import se.fullstackare.mastermind.Spheres.DataClass.ColoredSpherePlaceholder;
 
 public class ColoredSpherePlaceholderSkin extends SphereSkin {
 
-    public ColoredSpherePlaceholderSkin(final ColoredSpherePlaceholder coloredSpherePlaceholder) {
-        super(coloredSpherePlaceholder);
-       getStyleClass().add("SpherePlaceholder");
-       setColor(Color.TRANSPARENT);
+    public ColoredSpherePlaceholderSkin(final ColoredSpherePlaceholder coloredSpherePlaceholder, Color color, String styleClass) {
+        super(coloredSpherePlaceholder, color, styleClass);
    }
 }

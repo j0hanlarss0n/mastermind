@@ -6,21 +6,11 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import se.fullstackare.mastermind.Spheres.DataClass.Peg;
 
-public class PegSkin extends Pane {
+public class PegSkin extends SphereSkin {
 
     //TODO-Johan Make class extend SphereSkin
 
-    public PhongMaterial material = new PhongMaterial();
-    private final Sphere sphere = new Sphere(10);
-
-    public PegSkin(final Peg peg) {
-        getStyleClass().add("Peg");
-
-        material.setDiffuseColor(Color.GREY);
-        material.setSpecularColor(Color.BLACK);
-        sphere.setMaterial(material);
-        sphere.setTranslateX(sphere.getRadius());
-        sphere.setTranslateY(sphere.getRadius());
-        getChildren().setAll(sphere);
+    public PegSkin(final Peg peg, Color color, String styleClass) {
+        super(peg, color, styleClass);
     }
 }

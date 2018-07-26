@@ -9,9 +9,8 @@ import se.fullstackare.mastermind.Spheres.DataClass.SelectorSphere;
 
 public class SelectorSphereSkin extends SphereSkin {
 
-    public SelectorSphereSkin(final SelectorSphere selectorSphere, Color color) {
-        super(selectorSphere);
-        getStyleClass().add("SelectorSphere");
-        setColor(color);
+    public SelectorSphereSkin(final SelectorSphere selectorSphere, Color color, String styleClass) {
+        super(selectorSphere, color, styleClass);
+
     }
 }
