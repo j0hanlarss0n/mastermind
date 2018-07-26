@@ -1,13 +1,17 @@
 package se.fullstackare.mastermind;
 
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class GameManager {
     private Pane gameScene;
     private Game  game;
-
-    public GameManager() {
+    private Stage stage;
+    public GameManager(Stage stage) {
+        this.stage = stage;
         newGame();
+
+        //TODO-Johan Add eventhandler select that clicks are on active row
     }
 
     public void newGame() {
@@ -30,4 +34,6 @@ public class GameManager {
     public Pane getGameScene() {
         return gameScene;
     }
+
+
 }

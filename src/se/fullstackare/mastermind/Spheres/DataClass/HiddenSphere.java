@@ -5,15 +5,15 @@ import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Skinnable;
 import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
-public class ColoredSphere extends Sphere implements Skinnable {
+public class HiddenSphere extends Sphere implements Skinnable {
 
-    public ColoredSphere(Game game, Color color, int radius) {
+    public HiddenSphere(Game game, Color color, int radius) {
         super(game, color, radius);
-        skin = new SphereSkin(this, Color.GREY, "ColoredSphere");
+        skin = new SphereSkin(this, color, "ColoredSphere");
     }
 
     public void pressed() {
-        System.out.println("Changing color");
-        setColor(game.getSelectedColor());
+        System.out.println("Nope");
+
     }
 }

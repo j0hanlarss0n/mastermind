@@ -1,17 +1,12 @@
 package se.fullstackare.mastermind.Rows.DataClass;
 
-import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.*;
-import se.fullstackare.mastermind.Rows.SkinClass.BoardRowSkin;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.ColoredSphere;
 import se.fullstackare.mastermind.Spheres.DataClass.ColoredSpherePlaceholder;
 import se.fullstackare.mastermind.Spheres.DataClass.MarkerSphere;
 import se.fullstackare.mastermind.Spheres.DataClass.PegSquare;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BoardRow extends Row implements Skinnable {
 

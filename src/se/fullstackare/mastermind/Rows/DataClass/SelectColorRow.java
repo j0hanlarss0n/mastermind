@@ -3,7 +3,6 @@ package se.fullstackare.mastermind.Rows.DataClass;
 import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
-import se.fullstackare.mastermind.Rows.SkinClass.SelectColorRowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.SelectorSphere;
 
 

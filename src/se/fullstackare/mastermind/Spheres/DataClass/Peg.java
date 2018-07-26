@@ -6,7 +6,6 @@ import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Skinnable;
-import se.fullstackare.mastermind.Spheres.SkinClass.PegSkin;
 import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 public class Peg extends Sphere implements Skinnable {

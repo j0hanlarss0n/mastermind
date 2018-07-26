@@ -49,7 +49,7 @@ public class Controller implements Initializable {
         if ( event.getTarget() == btnUp) {
             System.out.println("mouse click detected! " + event.getSource().getClass());
             paneUp.setVisible(true);
-            manager = new GameManager();
+            manager = new GameManager(myStage);
             paneUp.getChildren().addAll(manager.getGameScene());
             paneDown.setVisible(false);
             paneSettings.setVisible(false);
