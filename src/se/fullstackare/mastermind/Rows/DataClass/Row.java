@@ -4,6 +4,8 @@ import javafx.scene.Node;
 import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Skinnable;
+import se.fullstackare.mastermind.Spheres.DataClass.Sphere;
+import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,5 +28,22 @@ public abstract class Row implements Skinnable{
 
     public Node getSkin() {
         return skin;
+    }
+
+    public void activateEventListener() {
+        rowItems.forEach((item -> {
+            if (item.getSkin() instanceof SphereSkin) {
+               ((SphereSkin) item.getSkin()).addEventHandler();
+
+            }
+        }));
+    }
+
+    public void disableEventListener() {
+        rowItems.forEach((item -> {
+            if (item.getSkin() instanceof SphereSkin) {
+                ((SphereSkin) item.getSkin()).removeEventHandler();
+            }
+        }));
     }
 }

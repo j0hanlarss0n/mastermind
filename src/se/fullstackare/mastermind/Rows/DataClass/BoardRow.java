@@ -3,10 +3,7 @@ package se.fullstackare.mastermind.Rows.DataClass;
 import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.*;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
-import se.fullstackare.mastermind.Spheres.DataClass.ColoredSphere;
-import se.fullstackare.mastermind.Spheres.DataClass.ColoredSpherePlaceholder;
-import se.fullstackare.mastermind.Spheres.DataClass.MarkerSphere;
-import se.fullstackare.mastermind.Spheres.DataClass.PegSquare;
+import se.fullstackare.mastermind.Spheres.DataClass.*;
 
 public class BoardRow extends Row implements Skinnable {
 
@@ -23,4 +20,13 @@ public class BoardRow extends Row implements Skinnable {
 
         skin = new RowSkin(this, "BoardRow");
     }
+
+    public void activateMarker() {
+        ((Sphere) rowItems.get(rowItems.size() - 1)).setColor(Color.GOLD);
+    }
+
+    public void deactivateMarker() {
+        ((Sphere) rowItems.get(rowItems.size() - 1)).setColor(Color.TRANSPARENT);
+    }
+
 }

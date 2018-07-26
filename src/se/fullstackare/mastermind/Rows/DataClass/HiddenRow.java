@@ -5,6 +5,7 @@ import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.ColoredSphere;
 import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Spheres.DataClass.HiddenSphere;
+import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 public class HiddenRow extends Row{
 

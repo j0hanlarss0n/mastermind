@@ -14,11 +14,12 @@ public class SphereSkin extends Pane {
     protected PhongMaterial material = new PhongMaterial();
     protected javafx.scene.shape.Sphere sphere;
     protected Color color;
+    protected Sphere mySphere;
 
 
     public SphereSkin (final Sphere mySphere) {
         getStyleClass().add("DefaultSphere");
-
+        this.mySphere = mySphere;
         sphere = new javafx.scene.shape.Sphere();
         sphere.setRadius(mySphere.getRadius());
         sphere.setTranslateX(sphere.getRadius());
@@ -28,7 +29,7 @@ public class SphereSkin extends Pane {
 
         getChildren().setAll(sphere);
 
-        setOnMousePressed((MouseEvent event) -> mySphere.pressed());
+        setOnMousePressed((MouseEvent event) -> System.out.println("Sphere is ignoring clicks"));
     }
 
     public SphereSkin (final Sphere mySphere, Color color) {
@@ -58,6 +59,14 @@ public class SphereSkin extends Pane {
         PhongMaterial mat = (PhongMaterial) sphere.getMaterial();
         System.out.println("Specular color is: " + mat.getSpecularColor() + ". Skins colorVar is: " + color);
         return color;
+    }
+
+    public void addEventHandler(){
+        setOnMousePressed((MouseEvent event) -> mySphere.pressed());
+    }
+
+    public void removeEventHandler(){
+        setOnMousePressed((MouseEvent event) -> System.out.println("Sphere is ignoring clicks"));
     }
 
 }

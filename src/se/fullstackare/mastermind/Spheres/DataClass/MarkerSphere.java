@@ -13,11 +13,13 @@ public class MarkerSphere extends Sphere implements Skinnable {
 
     public MarkerSphere(Game game) {
         super(game);
-        skin = new SphereSkin(this, Color.GOLD,"MarkerSphere");
+        skin = new SphereSkin(this, Color.TRANSPARENT,"MarkerSphere");
     }
 
     public void pressed() {
-        System.out.println("Color in pressed: " + color);
+        System.out.println("Marker pressed! Changing row");
+        game.changeToNextRow();
+        setColor(Color.TRANSPARENT);
     }
 
     public Node getSkin() {

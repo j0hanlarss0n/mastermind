@@ -3,8 +3,11 @@ package se.fullstackare.mastermind;
 import javafx.scene.Node;
 import se.fullstackare.mastermind.Rows.DataClass.BoardRow;
 import se.fullstackare.mastermind.Rows.DataClass.HiddenRow;
+import se.fullstackare.mastermind.Rows.DataClass.Row;
 import se.fullstackare.mastermind.Rows.DataClass.SelectColorRow;
+import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.ColoredSpherePlaceholder;
+import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,20 @@ public class Board implements Skinnable{
         }
         rowItems.add(new ColoredSpherePlaceholder(game));
         rowItems.add(new SelectColorRow(game));
+
+
+        ((Row) rowItems.get(rowItems.size() - 1)).getSkinnableItems().forEach(item -> {
+            if (item.getSkin() instanceof SphereSkin) {
+                ((SphereSkin) item.getSkin()).addEventHandler();
+            }
+        });
+        /*
+        ((RowSkin) rowItems.get(rowItems.size() - 1)).getRow().getSkinnableItems().forEach(item -> {
+            if (item.getSkin() instanceof SphereSkin) {
+                ((SphereSkin) item.getSkin()).addEventHandler();
+            }
+        });
+        */
 
         skin = new BoardSkin(this);
     }
