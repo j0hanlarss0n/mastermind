@@ -29,4 +29,19 @@ public class BoardRow extends Row implements Skinnable {
         ((Sphere) rowItems.get(rowItems.size() - 1)).setColor(Color.TRANSPARENT);
     }
 
+    public void activate() {
+        rowItems.forEach(item -> {
+            if (item instanceof ColoredSphere) {
+                item.getSkin().getStyleClass().add("Selected");
+            }
+        });
+        activateEventListener();
+        activateMarker();
+    }
+
+    public void deactivate() {
+        rowItems.forEach(item -> item.getSkin().getStyleClass().removeIf(style -> style.equals("Selected")));
+        disableEventListener();
+        deactivateMarker();
+    }
 }

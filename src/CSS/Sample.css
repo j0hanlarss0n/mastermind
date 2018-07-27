@@ -254,3 +254,11 @@
 
 
 */
+
+.Selected {
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}
+
+.MarkerSphere {
+    -fx-effect: dropshadow( one-pass-box , #FFEE10 , 8, 0.0, 0, 0);
+}

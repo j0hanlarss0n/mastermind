@@ -40,6 +40,10 @@ public abstract class Sphere implements Skinnable {
         skin.setColor(color);
     }
 
+    public void addSelectedStyle() {
+        getSkin().getStyleClass().add("Selected");
+    }
+
     public Node getSkin() {
         return skin;
     }

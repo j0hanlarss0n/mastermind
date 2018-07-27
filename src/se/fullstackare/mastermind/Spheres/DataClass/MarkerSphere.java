@@ -13,7 +13,7 @@ public class MarkerSphere extends Sphere implements Skinnable {
 
     public MarkerSphere(Game game) {
         super(game);
-        skin = new SphereSkin(this, Color.GREEN,"MarkerSphere");
+        skin = new SphereSkin(this, Color.TRANSPARENT,"MarkerSphere");
         skin.ignoreDragging();
     }
 //TODO-Johan fix the problem with nondisapearing

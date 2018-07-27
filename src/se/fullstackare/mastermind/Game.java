@@ -25,53 +25,25 @@ public class Game implements Skinnable{
     }
 
     public void setCurrentRow(BoardRow row) {
-        currentRow = row;
-        currentRow.activateEventListener();
-        currentRow.activateMarker();
+        board.setCurrentRow(row);
     }
 
     public void changeToNextRow() {
-        BoardRow lastRow = null;
-        List<Skinnable> rowItems = board.getSkinnableItems();
-        for (int i = 0; i < rowItems.size(); i++) {
-            if (rowItems.get(i) == currentRow) {
-               System.out.println("Found match");
-               break;
-            } else {
-                System.out.println("Didnt find match");
-                if (rowItems.get(i) instanceof  BoardRow) {
-                    lastRow = (BoardRow) rowItems.get(i);
-                }
-            }
-        }
-        //TODO-Johan make it so that current row handles deactivation and that next row handles activation
-        if (currentRow != null) {
-            currentRow.disableEventListener();
-        }
-        if (lastRow != null) {
-            System.out.println("lastRow has a value");
-            currentRow.deactivateMarker();
-            setCurrentRow(lastRow);
-        } else {
-            System.out.println("Game ended");
-        }
+        board.changeToNextRow();
     }
 
     public Color getSelectedColor() {
         return selectedColor;
     }
 
-    public void setSelectedColor(Color selectedColor) {
-        this.selectedColor = selectedColor;
+    public void setSelectedColor(Color newSelectedColor) {
+        if (selectedColor != null) {
+            board.removeSelected(selectedColor);
+        }
+        board.addSelected(newSelectedColor);
+        selectedColor = newSelectedColor;
         System.out.println("Selected color changed to: " + selectedColor);
     }
-
-    public void removeBoard() {
-        board.remove();
-    }
-
-
-
 
 
     public Board getBoard() {

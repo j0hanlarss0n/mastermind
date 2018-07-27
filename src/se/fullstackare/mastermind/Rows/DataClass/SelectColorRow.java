@@ -4,6 +4,7 @@ import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.SelectorSphere;
+import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 
 public class SelectColorRow extends Row{
@@ -21,5 +22,7 @@ public class SelectColorRow extends Row{
         rowItems.add(new SelectorSphere(game, Color.RED));
 
         skin = new RowSkin(this, "SelectColorRow");
+
     }
+
 }
