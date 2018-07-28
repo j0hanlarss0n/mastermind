@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.Rows.DataClass.BoardRow;
+import se.fullstackare.mastermind.Rows.DataClass.HiddenRow;
 import se.fullstackare.mastermind.Rows.DataClass.Row;
 
 import java.util.List;
@@ -37,6 +38,7 @@ public class Game implements Skinnable{
     }
 
     public void changeToNextRow() {
+        board.calculateScore();
         board.changeToNextRow();
     }
 

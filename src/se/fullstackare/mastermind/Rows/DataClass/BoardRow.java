@@ -5,6 +5,9 @@ import se.fullstackare.mastermind.*;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BoardRow extends Row implements Skinnable {
 
     public BoardRow(Game game) {
@@ -43,5 +46,17 @@ public class BoardRow extends Row implements Skinnable {
         rowItems.forEach(item -> item.getSkin().getStyleClass().removeIf(style -> style.equals("Selected")));
         disableEventListener();
         deactivateMarker();
+    }
+
+    public List<Color> getSphereColors() {
+        List<Color> colors = new ArrayList<>();
+        for(int i = 0; i < 4; i++) {
+            colors.add(((ColoredSphere) rowItems.get(i)).getColor());
+        }
+        return colors;
+    }
+
+    public void setScore (List<Color> score) {
+        System.out.println(score);
     }
 }

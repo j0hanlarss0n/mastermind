@@ -64,4 +64,5 @@ public abstract class Row implements Skinnable{
     public void removeSelectedStyle(Color color) {
         rowItems.forEach(item -> item.getSkin().getStyleClass().removeIf(style -> style.equals("Selected")));
     }
+
 }

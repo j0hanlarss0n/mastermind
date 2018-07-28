@@ -41,11 +41,29 @@ public class HiddenRow extends Row{
     public List<Color> getRandomColors(boolean uniqueColors) {
         System.out.println("UniqueCOlors in getRandomColors is: " + uniqueColors);
         List<Color> colorsList = new ArrayList<>();
-        for(int i = 0; i < 4; i++) {
-            colorsList.add(colorMap.get(Integer.valueOf((int)(Math.random() * 8))));
+        int rand;
+        while(colorsList.size() < 4) {
+            rand = Integer.valueOf((int) (Math.random() * 8));
+            if (uniqueColors) {
+                if (colorsList.contains(colorMap.get(rand))) {
+                    System.out.println("In getRandomColors, ColorsList already contains color");
+                } else {
+                    colorsList.add(colorMap.get(rand));
+                }
+            } else {
+                colorsList.add(colorMap.get(rand));
+            }
         }
         System.out.println("ColorsList size: " + colorsList.size());
         System.out.println("Color: " + colorsList);
         return colorsList;
+    }
+
+    public List<Color> getSphereColors() {
+        List<Color> colors = new ArrayList<>();
+        for(int i = 0; i < 4; i++) {
+            colors.add(((HiddenSphere) rowItems.get(i)).getHiddenColor());
+        }
+        return colors;
     }
 }

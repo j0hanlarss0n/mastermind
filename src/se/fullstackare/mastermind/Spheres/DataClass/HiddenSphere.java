@@ -8,10 +8,11 @@ import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 public class HiddenSphere extends Sphere implements Skinnable {
 
     private Color hiddenColor;
+
     public HiddenSphere(Game game, Color color, Color hiddenColor, int radius) {
         super(game, color, radius);
         this.hiddenColor = hiddenColor;
-        skin = new SphereSkin(this, hiddenColor, "ColoredSphere");
+        skin = new SphereSkin(this, (game.getDifficulty() == "Show all") ? hiddenColor : color, "ColoredSphere");
         skin.ignoreDragging();
     }
 
@@ -19,5 +20,13 @@ public class HiddenSphere extends Sphere implements Skinnable {
     public void pressed() {
         System.out.println("Nope");
 
+    }
+
+    public Color getHiddenColor() {
+        return hiddenColor;
+    }
+
+    public void showHiddenColor() {
+        skin.setColor(hiddenColor);
     }
 }

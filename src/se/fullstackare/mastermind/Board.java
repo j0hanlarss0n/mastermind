@@ -105,4 +105,52 @@ public class Board implements Skinnable{
         ((SelectColorRow) rowItems.get(rowItems.size() - 1)).addSelectedStyle(color);
     }
 
+    public HiddenRow getHiddenRow () {
+        return (HiddenRow) rowItems.get(0);
+    }
+
+    public void calculateScore () {
+        List<Color> hiddenRowColors = getHiddenRow().getSphereColors();
+        List<Color> boardRowColors = currentRow.getSphereColors();
+        List<Integer> blackPeg = new ArrayList<>();
+        List<Color> whitePeg = new ArrayList<>();
+        List<Color> score = new ArrayList<>();
+
+        for (int i = 0; i < hiddenRowColors.size(); i++) {
+            if (hiddenRowColors.get(i) == boardRowColors.get(i)) {
+                blackPeg.add(i);
+                System.out.println("Calculate Score: MATCH!");
+            }
+        }
+
+        int shift = 0;
+        for (Integer peg : blackPeg) {
+            hiddenRowColors.remove((int) peg - shift);
+            boardRowColors.remove((int) peg - shift);
+            shift++;
+            System.out.println("Calculate Score: Removing " + peg);
+        }
+
+        for (Color color : boardRowColors) {
+            if ( ! whitePeg.contains(color)) {
+                if (hiddenRowColors.contains(color)) {
+                    whitePeg.add(color);
+                    System.out.println("Calculate Score: color added to whitePeg");
+                } else {
+                    System.out.println("Calculate Score: Color not present in hidden row");
+                }
+            } else {
+                System.out.println("Calculate Score: color already in whitePeg");
+            }
+        }
+
+        blackPeg.forEach(peg -> score.add(Color.BLACK));
+        whitePeg.forEach(peg -> score.add(Color.WHITE));
+        while(score.size() < 4) {
+            score.add(Color.GREY);
+        }
+
+        currentRow.setScore(score);
+
+    }
 }
