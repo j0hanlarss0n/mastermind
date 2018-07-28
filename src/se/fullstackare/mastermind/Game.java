@@ -15,12 +15,20 @@ public class Game implements Skinnable{
 
     private BoardRow currentRow;
 
+    private String difficulty;
+
+    private boolean uniqueColors;
 
     private Color selectedColor;
 
-    private Board board = new Board(this);
+    private Board board;
 
-    public Game(GameManager manager) {
+    public Game(GameManager manager, String difficulty, boolean uniqueColors) {
+        this.difficulty = difficulty;
+        System.out.println("Setting Games 'UniqueColors' to: " + uniqueColors);
+        this.uniqueColors = uniqueColors;
+        System.out.println(" Games 'UniqueColors' is: " + this.uniqueColors);
+        board = new Board(this);
         skin = new GameSkin(this);
     }
 
@@ -45,6 +53,14 @@ public class Game implements Skinnable{
         System.out.println("Selected color changed to: " + selectedColor);
     }
 
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public boolean getUniqueColors() {
+        System.out.println(" Games is returning 'UniqueColors' as: " + uniqueColors);
+        return uniqueColors;
+    }
 
     public Board getBoard() {
         return board;

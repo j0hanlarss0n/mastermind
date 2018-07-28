@@ -10,15 +10,16 @@ public class GameManager {
     private Pane gameScene;
     private Game  game;
     private Stage stage;
-    public GameManager(Stage stage) {
+    public GameManager(Stage stage, String difficulty, boolean uniqueColors) {
+        System.out.println("GameManger. Difficulty: " + difficulty + ". Unique Colors: " + uniqueColors);
         this.stage = stage;
-        newGame();
+        newGame(difficulty, uniqueColors);
 
         //TODO-Johan Add eventhandler select that clicks are on active row
     }
 
-    public void newGame() {
-        game = new Game(this);
+    public void newGame(String difficulty, boolean uniqueColors) {
+        game = new Game(this, difficulty, uniqueColors);
 
         if (gameScene == null) {
             gameScene = new Pane();

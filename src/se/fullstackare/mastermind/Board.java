@@ -74,6 +74,8 @@ public class Board implements Skinnable{
             }
         }
 
+        //TODO-Johan Needs to check with hidden row and determin scores
+
         if (currentRow != null) {
             currentRow.deactivate();
             //currentRow.disableEventListener();

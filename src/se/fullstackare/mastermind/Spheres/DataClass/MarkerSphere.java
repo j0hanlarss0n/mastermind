@@ -16,7 +16,6 @@ public class MarkerSphere extends Sphere implements Skinnable {
         skin = new SphereSkin(this, Color.TRANSPARENT,"MarkerSphere");
         skin.ignoreDragging();
     }
-//TODO-Johan fix the problem with nondisapearing
 
     public void pressed() {
         System.out.println("Marker pressed! Changing row");

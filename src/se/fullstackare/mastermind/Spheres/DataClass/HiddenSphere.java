@@ -7,12 +7,15 @@ import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 public class HiddenSphere extends Sphere implements Skinnable {
 
-    public HiddenSphere(Game game, Color color, int radius) {
+    private Color hiddenColor;
+    public HiddenSphere(Game game, Color color, Color hiddenColor, int radius) {
         super(game, color, radius);
-        skin = new SphereSkin(this, color, "ColoredSphere");
+        this.hiddenColor = hiddenColor;
+        skin = new SphereSkin(this, hiddenColor, "ColoredSphere");
         skin.ignoreDragging();
     }
 
+    //TODO-Johan add function that sets skin color to hiddenCOlor when checkbox is toggled
     public void pressed() {
         System.out.println("Nope");
 

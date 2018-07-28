@@ -98,17 +98,13 @@
          </children></AnchorPane>
       <AnchorPane fx:id="paneSettings" layoutY="120.0" prefHeight="750.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          <children>
-            <Slider fx:id="sliderOpacity" blockIncrement="0.1" layoutX="250.0" layoutY="657.0" majorTickUnit="0.5" max="1.0" minorTickCount="1" prefHeight="14.0" prefWidth="163.0" showTickLabels="true" showTickMarks="true" />
+            <Slider fx:id="sliderOpacity" blockIncrement="0.1" layoutX="250.0" layoutY="657.0" majorTickUnit="0.5" max="1.0" min="0.1" minorTickCount="1" prefHeight="14.0" prefWidth="163.0" showTickLabels="true" showTickMarks="true" />
             <Label layoutX="105.0" layoutY="655.0" prefHeight="17.0" prefWidth="70.0" styleClass="glowingText" text="Opacity:" textFill="#ffee10" />
             <ChoiceBox fx:id="choiceBoxDifficulty" layoutX="250.0" layoutY="600.0" prefHeight="25.0" prefWidth="163.0" />
             <Label layoutX="105.0" layoutY="604.0" prefHeight="17.0" prefWidth="70.0" styleClass="glowingText" text="Difficulty:" textFill="#ffee10" />
             <Label fx:id="paneSettingsLabel" layoutX="105.0" layoutY="66.0" text="Label" />
             <Label layoutX="105.0" layoutY="544.0" prefHeight="17.0" prefWidth="83.0" styleClass="glowingText" text="Unique colors:" textFill="#ffee10" />
-            <Label layoutX="105.0" layoutY="487.0" prefHeight="17.0" prefWidth="83.0" styleClass="glowingText" text="Show correct:" textFill="#ffee10" />
-            <Label layoutX="105.0" layoutY="426.0" prefHeight="17.0" prefWidth="70.0" styleClass="glowingText" text="Show all:" textFill="#ffee10" />
             <CheckBox fx:id="checkBoxUniqueColors" layoutX="250.0" layoutY="544.0" mnemonicParsing="false" selected="true" />
-            <CheckBox fx:id="checkBoxShowCorrect" layoutX="250.0" layoutY="487.0" mnemonicParsing="false" />
-            <CheckBox fx:id="checkBoxShowAll" layoutX="250.0" layoutY="426.0" mnemonicParsing="false" />
          </children></AnchorPane>
       <AnchorPane fx:id="paneDown" layoutY="120.0" prefHeight="750.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          </AnchorPane>
