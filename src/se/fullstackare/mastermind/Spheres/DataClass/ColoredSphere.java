@@ -15,8 +15,13 @@ public class ColoredSphere extends Sphere implements Skinnable {
 
     public void pressed() {
         if (game.getSelectedColor() != null) {
-            System.out.println("Changing color");
-            setColor(game.getSelectedColor());
+            if (game.getSelectedColor() == skin.getColor()) {
+                System.out.println("removing color color");
+                setColor(Color.GREY);
+            } else {
+                System.out.println("Changing color");
+                setColor(game.getSelectedColor());
+            }
         } else {
             System.out.println("Color is null");
         }

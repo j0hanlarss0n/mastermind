@@ -8,6 +8,7 @@ import se.fullstackare.mastermind.Rows.DataClass.BoardRow;
 import se.fullstackare.mastermind.Rows.DataClass.HiddenRow;
 import se.fullstackare.mastermind.Rows.DataClass.Row;
 
+import java.io.PrintStream;
 import java.util.List;
 
 public class Game implements Skinnable{
@@ -24,6 +25,11 @@ public class Game implements Skinnable{
 
     private Board board;
 
+    private boolean gameWon = false;
+
+    private boolean gameOver = false;
+
+
     public Game(GameManager manager, String difficulty, boolean uniqueColors) {
         this.difficulty = difficulty;
         System.out.println("Setting Games 'UniqueColors' to: " + uniqueColors);
@@ -39,6 +45,9 @@ public class Game implements Skinnable{
 
     public void changeToNextRow() {
         board.calculateScore();
+        if (gameWon) {
+            board.victory();
+        }
         board.changeToNextRow();
     }
 
@@ -62,6 +71,22 @@ public class Game implements Skinnable{
     public boolean getUniqueColors() {
         System.out.println(" Games is returning 'UniqueColors' as: " + uniqueColors);
         return uniqueColors;
+    }
+
+    public void setGameWon(boolean bool) {
+        gameWon = bool;
+    }
+
+    public void setGameOver(boolean bool) {
+        gameWon = bool;
+    }
+
+    public boolean getGameWon() {
+        return gameWon;
+    }
+
+    public boolean getGameOver() {
+        return gameWon;
     }
 
     public Board getBoard() {

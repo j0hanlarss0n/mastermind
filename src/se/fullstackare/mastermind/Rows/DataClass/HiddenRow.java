@@ -31,7 +31,7 @@ public class HiddenRow extends Row{
         colors = getRandomColors(game.getUniqueColors());
         for(int i = 0; i < 4; i++) {
             System.out.println("Color: " + colors.get(2));
-            rowItems.add(new HiddenSphere(game, Color.ANTIQUEWHITE, colors.get(i), 20));
+            rowItems.add(new HiddenSphere(game, Color.LIGHTSTEELBLUE, colors.get(i), 20));
         }
         skin = new RowSkin(this, "HiddenRow");
     }
@@ -66,4 +66,11 @@ public class HiddenRow extends Row{
         }
         return colors;
     }
+
+    public void showColors (List<Integer> match) {
+        for (Integer integer : match) {
+            ((HiddenSphere) rowItems.get(integer.intValue())).showHiddenColor();
+        }
+    }
+
 }

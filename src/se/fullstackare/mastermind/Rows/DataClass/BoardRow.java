@@ -42,10 +42,20 @@ public class BoardRow extends Row implements Skinnable {
         activateMarker();
     }
 
+
     public void deactivate() {
         rowItems.forEach(item -> item.getSkin().getStyleClass().removeIf(style -> style.equals("Selected")));
         disableEventListener();
         deactivateMarker();
+    }
+
+    public void correctRow() {
+        rowItems.forEach(item -> {
+            if (item instanceof ColoredSphere) {
+                item.getSkin().getStyleClass().add("CorrectSphere");
+            }
+        });
+        skin.getStyleClass().add("CorrectRow");
     }
 
     public List<Color> getSphereColors() {
@@ -57,6 +67,7 @@ public class BoardRow extends Row implements Skinnable {
     }
 
     public void setScore (List<Color> score) {
-        System.out.println(score);
+        ((PegSquare)rowItems.get(5)).setScore(score);
     }
+
 }

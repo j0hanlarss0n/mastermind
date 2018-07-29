@@ -12,19 +12,23 @@ import se.fullstackare.mastermind.Spheres.DataClass.Sphere;
 import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Board implements Skinnable{
 
     private BoardRow currentRow;
     private BoardRow lastRow;
+    private Game game;
 
     protected List<Skinnable> rowItems = new ArrayList<>();
 
     private final BoardSkin skin;
 
     public Board(Game game) {
-
+        this.game = game;
         rowItems.add(new HiddenRow(game));
         rowItems.add(new ColoredSpherePlaceholder(game));
         for (int i = 0; i < 10; i++) {
@@ -42,13 +46,6 @@ public class Board implements Skinnable{
                 ((SphereSkin) item.getSkin()).addEventHandler();
             }
         });
-        /*
-        ((RowSkin) rowItems.get(rowItems.size() - 1)).getRow().getSkinnableItems().forEach(item -> {
-            if (item.getSkin() instanceof SphereSkin) {
-                ((SphereSkin) item.getSkin()).addEventHandler();
-            }
-        });
-        */
 
         skin = new BoardSkin(this);
     }
@@ -78,15 +75,21 @@ public class Board implements Skinnable{
 
         if (currentRow != null) {
             currentRow.deactivate();
-            //currentRow.disableEventListener();
         }
 
-        if (lastRow != null) {
-            System.out.println("lastRow has a value");
-            currentRow.deactivateMarker();
-            setCurrentRow(lastRow);
+
+        if (currentRow != lastRow && !game.getGameOver() && !game.getGameWon()) {
+
+            if (lastRow != null) {
+                System.out.println("lastRow has a value");
+                currentRow.deactivateMarker();
+                setCurrentRow(lastRow);
+            } else {
+                System.out.println("lastRow = null");
+            }
         } else {
-            System.out.println("Game ended");
+            System.out.println("Curr = last = Game ended");
+            game.setGameOver(true);
         }
     }
 
@@ -105,6 +108,10 @@ public class Board implements Skinnable{
         ((SelectColorRow) rowItems.get(rowItems.size() - 1)).addSelectedStyle(color);
     }
 
+    public void victory() {
+        currentRow.correctRow();
+    }
+
     public HiddenRow getHiddenRow () {
         return (HiddenRow) rowItems.get(0);
     }
@@ -121,6 +128,10 @@ public class Board implements Skinnable{
                 blackPeg.add(i);
                 System.out.println("Calculate Score: MATCH!");
             }
+        }
+
+        if (game.getDifficulty() == "Show correct") {
+            ((HiddenRow) rowItems.get(0)).showColors(blackPeg);
         }
 
         int shift = 0;
@@ -144,7 +155,7 @@ public class Board implements Skinnable{
             }
         }
 
-        blackPeg.forEach(peg -> score.add(Color.BLACK));
+        blackPeg.forEach(peg -> score.add(Color.NAVY));
         whitePeg.forEach(peg -> score.add(Color.WHITE));
         while(score.size() < 4) {
             score.add(Color.GREY);
@@ -153,4 +164,5 @@ public class Board implements Skinnable{
         currentRow.setScore(score);
 
     }
+
 }
