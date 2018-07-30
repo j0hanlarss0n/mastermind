@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class HiddenRow extends Row{
 
@@ -35,8 +36,6 @@ public class HiddenRow extends Row{
         }
         skin = new RowSkin(this, "HiddenRow");
     }
-
-    //TODO-Johan add function that calls the speere and make them change their color to hiddenColor when checkbox is toggled
 
     public List<Color> getRandomColors(boolean uniqueColors) {
         System.out.println("UniqueCOlors in getRandomColors is: " + uniqueColors);
@@ -71,6 +70,18 @@ public class HiddenRow extends Row{
         for (Integer integer : match) {
             ((HiddenSphere) rowItems.get(integer.intValue())).showHiddenColor();
         }
+    }
+
+    public void showAllColors () {
+        List<HiddenSphere> hiddenSpheres = filter(HiddenSphere.class, rowItems);
+        hiddenSpheres.forEach(sphere -> sphere.showHiddenColor());
+    }
+
+    static <T> List<T> filter(Class<T> clazz, List<?> items) {
+        return items.stream()
+                .filter(clazz::isInstance)
+                .map(clazz::cast)
+                .collect(Collectors.toList());
     }
 
 }

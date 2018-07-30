@@ -26,13 +26,10 @@ public class Controller implements Initializable {
     private Stage myStage;
 
     @FXML
-    private Label paneSettingsLabel;
-
-    @FXML
     private ImageView btnUp, btnDown, btnSettings, btnPower;
 
     @FXML
-    private AnchorPane paneTop, paneDown, paneSettings, paneStage;
+    private AnchorPane paneDown, paneSettings;
 
     @FXML
     private Pane paneUp;
@@ -79,7 +76,6 @@ public class Controller implements Initializable {
                 Platform.exit();
             } else {
                 manager.deleteGame();
-                //paneUp.getChildren().removeAll(manager.getGameScene());
                 paneUp.setVisible(false);
                 paneDown.setVisible(false);
                 paneSettings.setVisible(false);
@@ -88,30 +84,19 @@ public class Controller implements Initializable {
 
     }
 
-    public Label getPaneUpLabel() {
-        return paneSettingsLabel;
-    }
-
     public void setStage(Stage stage) {
         myStage = stage;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("Starting Controller...");
-
 
         ObservableList<String> availableChoices = FXCollections.observableArrayList("Normal", "Show correct", "Show all");
         choiceBoxDifficulty.setItems(availableChoices);
         choiceBoxDifficulty.getSelectionModel().select("Normal");
 
         sliderOpacity.setValue(0.85);
-        sliderOpacity.valueProperty().addListener((observable, oldValue, newValue) -> {
-
-            myStage.setOpacity(newValue.doubleValue());
-            paneSettingsLabel.setText(Double.toString(newValue.doubleValue()));
-
-        });
+        sliderOpacity.valueProperty().addListener((observable, oldValue, newValue) -> myStage.setOpacity(newValue.doubleValue()));
 
         sliderOpacity.addEventFilter(MouseEvent.ANY, (MouseEvent event) -> {
             if (!(event.getEventType().getName() == "MOUSE_MOVED" || event.getEventType().getName() == "MOUSE_DRAGGED")) {

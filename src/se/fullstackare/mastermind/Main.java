@@ -31,8 +31,7 @@ public class Main extends Application {
         Parent root = loader.load();
         Controller controller = loader.getController();
 
-        System.out.println(controller.getPaneUpLabel().getText());
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Mastermind");
         primaryStage.initStyle(StageStyle.TRANSPARENT);
 
         //grab

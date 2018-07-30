@@ -14,8 +14,6 @@ public class GameManager {
         System.out.println("GameManger. Difficulty: " + difficulty + ". Unique Colors: " + uniqueColors);
         this.stage = stage;
         newGame(difficulty, uniqueColors);
-
-        //TODO-Johan Add eventhandler select that clicks are on active row
     }
 
     public void newGame(String difficulty, boolean uniqueColors) {

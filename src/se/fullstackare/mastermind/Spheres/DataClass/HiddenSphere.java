@@ -16,7 +16,6 @@ public class HiddenSphere extends Sphere implements Skinnable {
         skin.ignoreDragging();
     }
 
-    //TODO-Johan add function that sets skin color to hiddenCOlor when checkbox is toggled
     public void pressed() {
         System.out.println("Nope");
 

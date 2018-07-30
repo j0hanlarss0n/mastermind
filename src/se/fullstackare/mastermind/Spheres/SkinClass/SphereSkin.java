@@ -9,8 +9,6 @@ import se.fullstackare.mastermind.Spheres.DataClass.Sphere;
 
 public class SphereSkin extends Pane {
 
-
-    //TODO-Johan Make all SphereSkins into just one, this.
     protected PhongMaterial material = new PhongMaterial();
     protected javafx.scene.shape.Sphere sphere;
     protected Color color;

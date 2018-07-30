@@ -71,8 +71,6 @@ public class Board implements Skinnable{
             }
         }
 
-        //TODO-Johan Needs to check with hidden row and determin scores
-
         if (currentRow != null) {
             currentRow.deactivate();
         }
@@ -109,6 +107,7 @@ public class Board implements Skinnable{
     }
 
     public void victory() {
+        ((HiddenRow) rowItems.get(0)).showAllColors();
         currentRow.correctRow();
     }
 
