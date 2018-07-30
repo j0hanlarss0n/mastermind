@@ -48,7 +48,6 @@ public class Controller implements Initializable {
     @FXML
     private void handleButtonAction(MouseEvent event) {
         if ( event.getTarget() == btnUp) {
-            System.out.println("mouse click detected! " + event.getSource().getClass());
             manager.deleteGame();
             paneUp.setVisible(true);
             manager = new GameManager(myStage, choiceBoxDifficulty.getValue(), checkBoxUniqueColors.isSelected());
@@ -56,22 +55,18 @@ public class Controller implements Initializable {
             paneDown.setVisible(false);
             paneSettings.setVisible(false);
         } else if ( event.getTarget() == btnDown) {
-            System.out.println("mouse click detected! " + event.getSource().getClass());
             manager.deleteGame();
             paneUp.getChildren().remove(manager.getGameScene());
             paneUp.setVisible(false);
             paneDown.setVisible(true);
             paneSettings.setVisible(false);
-
         } else if ( event.getTarget() == btnSettings) {
-            System.out.println("mouse click detected! " + event.getSource().getClass());
             manager.deleteGame();
             paneUp.getChildren().removeAll(manager.getGameScene());
             paneUp.setVisible(false);
             paneDown.setVisible(false);
             paneSettings.setVisible(true);
         } else if ( event.getTarget() == btnPower) {
-            System.out.println("mouse click detected! " + event.getSource().getClass());
             if (!(paneUp.isVisible() || paneDown.isVisible() || paneSettings.isVisible())) {
                 Platform.exit();
             } else {

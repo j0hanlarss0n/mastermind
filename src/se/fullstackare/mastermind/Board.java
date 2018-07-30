@@ -6,16 +6,11 @@ import se.fullstackare.mastermind.Rows.DataClass.BoardRow;
 import se.fullstackare.mastermind.Rows.DataClass.HiddenRow;
 import se.fullstackare.mastermind.Rows.DataClass.Row;
 import se.fullstackare.mastermind.Rows.DataClass.SelectColorRow;
-import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Spheres.DataClass.ColoredSpherePlaceholder;
-import se.fullstackare.mastermind.Spheres.DataClass.Sphere;
 import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Board implements Skinnable{
 
@@ -61,10 +56,8 @@ public class Board implements Skinnable{
     public void changeToNextRow() {
         for (Skinnable row : rowItems) {
             if (row == currentRow) {
-                System.out.println("Found match");
                 break;
             } else {
-                System.out.println("Didnt find match");
                 if (row instanceof  BoardRow) {
                     lastRow = (BoardRow) row;
                 }
@@ -75,18 +68,13 @@ public class Board implements Skinnable{
             currentRow.deactivate();
         }
 
-
         if (currentRow != lastRow && !game.getGameOver() && !game.getGameWon()) {
-
             if (lastRow != null) {
-                System.out.println("lastRow has a value");
                 currentRow.deactivateMarker();
                 setCurrentRow(lastRow);
             } else {
-                System.out.println("lastRow = null");
             }
         } else {
-            System.out.println("Curr = last = Game ended");
             game.setGameOver(true);
         }
     }
@@ -94,8 +82,6 @@ public class Board implements Skinnable{
     public void setCurrentRow(BoardRow row) {
         currentRow = row;
         currentRow.activate();
-        //currentRow.activateEventListener();
-        //currentRow.activateMarker();
     }
 
     public void removeSelected(Color color) {
@@ -138,19 +124,18 @@ public class Board implements Skinnable{
             hiddenRowColors.remove((int) peg - shift);
             boardRowColors.remove((int) peg - shift);
             shift++;
-            System.out.println("Calculate Score: Removing " + peg);
         }
 
         for (Color color : boardRowColors) {
             if ( ! whitePeg.contains(color)) {
                 if (hiddenRowColors.contains(color)) {
                     whitePeg.add(color);
-                    System.out.println("Calculate Score: color added to whitePeg");
+                    System.out.println("Calculate Score: Color added to whitePeg");
                 } else {
                     System.out.println("Calculate Score: Color not present in hidden row");
                 }
             } else {
-                System.out.println("Calculate Score: color already in whitePeg");
+                System.out.println("Calculate Score: Color already in whitePeg");
             }
         }
 

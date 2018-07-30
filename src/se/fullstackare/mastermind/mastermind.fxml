@@ -96,7 +96,7 @@
                </children>
             </AnchorPane>
          </children></AnchorPane>
-      <AnchorPane fx:id="paneSettings" layoutY="120.0" prefHeight="750.0" prefWidth="500.0" style="-fx-background-color: #3D4956;">
+      <AnchorPane fx:id="paneSettings" layoutY="120.0" prefHeight="750.0" prefWidth="500.0" style="-fx-background-color: #3D4956;" visible="false">
          <children>
             <Slider fx:id="sliderOpacity" blockIncrement="0.1" layoutX="250.0" layoutY="657.0" majorTickUnit="0.5" max="1.0" min="0.1" minorTickCount="1" prefHeight="14.0" prefWidth="163.0" showTickLabels="true" showTickMarks="true" />
             <Label layoutX="105.0" layoutY="655.0" prefHeight="17.0" prefWidth="70.0" styleClass="glowingText" text="Opacity:" textFill="#ffee10" />

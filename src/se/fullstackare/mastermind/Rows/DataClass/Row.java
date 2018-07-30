@@ -6,7 +6,6 @@ import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
 import se.fullstackare.mastermind.Skinnable;
 import se.fullstackare.mastermind.Spheres.DataClass.SelectorSphere;
-import se.fullstackare.mastermind.Spheres.DataClass.Sphere;
 import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 import java.util.ArrayList;

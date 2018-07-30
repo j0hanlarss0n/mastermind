@@ -1,15 +1,8 @@
 package se.fullstackare.mastermind;
 
-import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.Rows.DataClass.BoardRow;
-import se.fullstackare.mastermind.Rows.DataClass.HiddenRow;
-import se.fullstackare.mastermind.Rows.DataClass.Row;
-
-import java.io.PrintStream;
-import java.util.List;
 
 public class Game implements Skinnable{
 
@@ -32,9 +25,7 @@ public class Game implements Skinnable{
 
     public Game(GameManager manager, String difficulty, boolean uniqueColors) {
         this.difficulty = difficulty;
-        System.out.println("Setting Games 'UniqueColors' to: " + uniqueColors);
         this.uniqueColors = uniqueColors;
-        System.out.println(" Games 'UniqueColors' is: " + this.uniqueColors);
         board = new Board(this);
         skin = new GameSkin(this);
     }
@@ -69,7 +60,6 @@ public class Game implements Skinnable{
     }
 
     public boolean getUniqueColors() {
-        System.out.println(" Games is returning 'UniqueColors' as: " + uniqueColors);
         return uniqueColors;
     }
 

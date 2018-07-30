@@ -55,7 +55,7 @@ public class SphereSkin extends Pane {
 
     public Color getColor() {
         PhongMaterial mat = (PhongMaterial) sphere.getMaterial();
-        System.out.println("Specular color is: " + mat.getSpecularColor() + ". Skins colorVar is: " + color);
+        System.out.println("Skins colorVar is: " + color);
         return color;
     }
 

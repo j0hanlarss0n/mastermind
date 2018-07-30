@@ -2,13 +2,10 @@ package se.fullstackare.mastermind.Rows.DataClass;
 
 import javafx.scene.paint.Color;
 import se.fullstackare.mastermind.Rows.SkinClass.RowSkin;
-import se.fullstackare.mastermind.Spheres.DataClass.ColoredSphere;
 import se.fullstackare.mastermind.Game;
 import se.fullstackare.mastermind.Spheres.DataClass.HiddenSphere;
-import se.fullstackare.mastermind.Spheres.SkinClass.SphereSkin;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -31,21 +28,18 @@ public class HiddenRow extends Row{
         super(game);
         colors = getRandomColors(game.getUniqueColors());
         for(int i = 0; i < 4; i++) {
-            System.out.println("Color: " + colors.get(2));
             rowItems.add(new HiddenSphere(game, Color.LIGHTSTEELBLUE, colors.get(i), 20));
         }
         skin = new RowSkin(this, "HiddenRow");
     }
 
     public List<Color> getRandomColors(boolean uniqueColors) {
-        System.out.println("UniqueCOlors in getRandomColors is: " + uniqueColors);
         List<Color> colorsList = new ArrayList<>();
         int rand;
         while(colorsList.size() < 4) {
             rand = Integer.valueOf((int) (Math.random() * 8));
             if (uniqueColors) {
                 if (colorsList.contains(colorMap.get(rand))) {
-                    System.out.println("In getRandomColors, ColorsList already contains color");
                 } else {
                     colorsList.add(colorMap.get(rand));
                 }
@@ -53,8 +47,7 @@ public class HiddenRow extends Row{
                 colorsList.add(colorMap.get(rand));
             }
         }
-        System.out.println("ColorsList size: " + colorsList.size());
-        System.out.println("Color: " + colorsList);
+        System.out.println("Colorlist from getRandomColors: " + colorsList);
         return colorsList;
     }
 
